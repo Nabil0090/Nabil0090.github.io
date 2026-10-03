@@ -12,8 +12,8 @@
     :root {
       --background: #ffffff;
       --text: #1d1d1f;
-      --secondary: #55595f;
-      --light: #8a8f96;
+      --secondary: #1d1d1f;
+      --light: #1d1d1f;
       --border: #e6e6e6;
       --blue: #2457a6;
       --blue-hover: #173f7a;
@@ -112,7 +112,7 @@
     }
 
     .hero-text {
-      color: #3a3d42;
+      color: var(--text);
       font-size: 18.5px;
       max-width: 660px;
     }
@@ -178,7 +178,7 @@
       letter-spacing: -0.5px;
     }
 
-    .about-text { max-width: 760px; font-size: 18px; color: #3a3d42; }
+    .about-text { max-width: 760px; font-size: 18px; color: var(--text); }
     .about-text p { margin-bottom: 18px; }
 
     .news {
@@ -195,7 +195,7 @@
       padding-top: 4px;
     }
 
-    .news-text { color: #3a3d42; }
+    .news-text { color: var(--text); }
 
     .research-list {
       display: flex;
@@ -257,7 +257,16 @@
       margin-bottom: 10px;
     }
 
-    .experience-org span { color: var(--light); font-weight: 400; }
+    .experience-org span { color: var(--text); font-weight: 400; }
+
+    .sup, .experience-org span.sup {
+      color: var(--blue);
+      font-weight: 600;
+      background: var(--blue-soft);
+      padding: 1px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
 
     .experience-description { margin: 0; color: var(--secondary); font-size: 17px; }
     .experience-description em { color: var(--text); }
@@ -422,11 +431,9 @@
             <h1>Nabil Walid Rafat</h1>
             <div class="hero-role">ML Researcher · LLM Safety · Agentic AI · Multimodal Learning</div>
 
-            <p>I'm a Computer Science and Engineering graduate from <a href="https://www.bracu.ac.bd/" target="_blank">BRAC University</a>. My research is about making AI systems more reliable, from stopping LLMs from being jailbroken to building agents that know which knowledge source to trust.</p>
+            <p>I'm a Computer Science and Engineering graduate from <a href="https://www.bracu.ac.bd/" target="_blank">BRAC University</a>, working on making AI systems safer and more reliable.</p>
 
-            <p>Right now I'm doing independent research at BRAC University with <strong>Dr. Swakkhar Shatabda</strong> on <strong>CisRAG</strong>, a dynamic routing algorithm for bio-agentic RAG in genomics. I'm also a <strong>Student Researcher at Elite Research Lab</strong>.</p>
-
-            <p>Before this, I was a research intern at <strong>AMIR Lab</strong> under <strong>Dr. M. Firoz Mridha</strong>, where I built MGQ-Former for remote sensing visual question answering.</p>
+            <p>I'm currently a <strong>Research Intern at Elite Research Lab</strong> and an <strong>Independent Researcher at BRAC University</strong>.</p>
 
             <div class="social-links">
               <a href="mailto:rafatnabil50@gmail.com">Email</a>
@@ -449,10 +456,11 @@
       <div class="container">
         <h2 class="section-title fade-in">About</h2>
         <div class="about-text fade-in">
-          <p>My work so far has run along three threads.</p>
-          <p><strong>LLM safety.</strong> My undergraduate thesis with <strong>Dr. Amitabha Chakrabarty</strong> introduced Dynamic Gated Distillation, a dual-teacher method that makes small language models harder to jailbreak without hurting their reasoning. Alongside it, I benchmarked how different LLMs hold up against jailbreak prompts, which became my ICECTE 2026 paper.</p>
-          <p><strong>Multimodal learning.</strong> At AMIR Lab I designed MGQ-Former, a tri-modal fusion model for remote sensing VQA that keeps fine-grained regional detail and reached <strong>78.3%</strong> accuracy on EarthVQA.</p>
-          <p><strong>AI for genomics.</strong> I fine-tuned the Omni-DNA language model for promoter and enhancer classification (over <strong>90%</strong> accuracy), and I'm now building that into CisRAG, an agentic RAG system that reasons directly over raw DNA sequences.</p>
+          <p>I started out on the engineering side of machine learning, building things like RAG chatbots and forecasting models. Somewhere along the way, I got more curious about why models behave the way they do than about just getting them to work, and that curiosity pulled me into research.</p>
+          <p>My first real research project was my undergraduate thesis, where I looked at how easily language models can be tricked into saying things they shouldn't. I spent months throwing jailbreak prompts at different LLMs, which turned into my first paper at ICECTE 2026. That work led me to build Dynamic Gated Distillation, a way to make small models safer without making them worse at reasoning.</p>
+          <p>After graduating, I moved into vision-language models at AMIR Lab. There I built MGQ-Former, a model that answers questions about satellite images while holding on to the small regional details most models tend to blur out. It reached 78.3% accuracy on EarthVQA.</p>
+          <p>These days, I'm most excited about agentic AI: systems that don't just answer, but first decide where to look and which sources to trust. I'm exploring this in genomics, building agents that reason directly over raw DNA sequences, a field where a confident wrong answer can really matter.</p>
+          <p>If any of this overlaps with what you're working on, I'd love to hear from you.</p>
         </div>
       </div>
     </section>
@@ -463,10 +471,10 @@
         <div class="news">
 
           <div class="news-date">2026</div>
-          <div class="news-text fade-in">Joined <strong>Elite Research Lab</strong> as a Student Researcher.</div>
+          <div class="news-text fade-in">Joined <strong>Elite Research Lab</strong> as a Research Intern.</div>
 
           <div class="news-date">Sep 2026</div>
-          <div class="news-text fade-in">Started independent research on <strong>CisRAG</strong> at BRAC University with Dr. Swakkhar Shatabda.</div>
+          <div class="news-text fade-in">Started independent research on <strong>CisRAG</strong> at BRAC University with <span class="sup">Dr. Swakkhar Shatabda</span>.</div>
 
           <div class="news-date">Aug 2026</div>
           <div class="news-text fade-in">Wrapped up my internship at <strong>AMIR Lab</strong>. MGQ-Former reached <strong>78.3%</strong> on EarthVQA.</div>
@@ -532,7 +540,7 @@
         <div class="experience-item fade-in">
           <div class="experience-date">2026 – Present</div>
           <div>
-            <div class="experience-title">Student Researcher</div>
+            <div class="experience-title">Research Intern</div>
             <div class="experience-org">Elite Research Lab</div>
             <p class="experience-description">Working on research in artificial intelligence and machine learning.</p>
           </div>
@@ -542,7 +550,7 @@
           <div class="experience-date">Sep 2026 – Present</div>
           <div>
             <div class="experience-title">Independent Research</div>
-            <div class="experience-org">BRAC University <span>· Supervisor: Dr. Swakkhar Shatabda</span></div>
+            <div class="experience-org">BRAC University <span>· Supervisor: <span class="sup">Dr. Swakkhar Shatabda</span></span></div>
             <p class="experience-description">Developing <strong>CisRAG</strong>, a novel dynamic routing algorithm for a bio-agentic RAG system in genomics. Designing capability-aware source selection and hallucination-resistant reasoning over raw DNA sequence prompts.</p>
           </div>
         </div>
@@ -551,7 +559,7 @@
           <div class="experience-date">Feb 2026 – Aug 2026</div>
           <div>
             <div class="experience-title">Research Intern (Remote)</div>
-            <div class="experience-org">AMIR Lab <span>· Supervisor: Dr. M. Firoz Mridha</span></div>
+            <div class="experience-org">AMIR Lab <span>· Supervisor: <span class="sup">Dr. M. Firoz Mridha</span></span></div>
             <p class="experience-description">Developed <strong>MGQ-Former</strong>, a tri-modal fusion architecture for remote sensing VQA. It combines vision-language representations with a dual-path gated pooling mechanism that preserves fine-grained regional information, achieving <strong>78.3%</strong> accuracy on EarthVQA.</p>
           </div>
         </div>
@@ -560,7 +568,7 @@
           <div class="experience-date">2025 – 2026</div>
           <div>
             <div class="experience-title">Undergraduate Thesis</div>
-            <div class="experience-org">BRAC University <span>· Supervisor: Dr. Amitabha Chakrabarty</span></div>
+            <div class="experience-org">BRAC University <span>· Supervisor: <span class="sup">Dr. Amitabha Chakrabarty</span></span></div>
             <p class="experience-description"><em>Dynamic Gated Distillation: Dual-Teacher Framework for Jailbreak Prevention in LLMs with Preserved Reasoning.</em> A post-training framework that uses a harm-score predictive model to guide dual-teacher knowledge distillation, improving jailbreak robustness while preserving general reasoning in smaller language models.</p>
           </div>
         </div>
