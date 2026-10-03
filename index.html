@@ -1,756 +1,1974 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Nabil Walid Rafat | AI Researcher</title>
-
-    <meta name="description"
-          content="Nabil Walid Rafat — AI Researcher and ML Engineer working on LLM safety, multimodal AI, and genomics.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
-            background: #ffffff;
-            color: #1f2937;
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1100px, 90%);
-            margin: 0 auto;
-        }
-
-        /* ---------- NAVIGATION ---------- */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .nav-inner {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            font-size: 0.92rem;
-            color: #4b5563;
-        }
-
-        .nav-links a:hover {
-            color: #111827;
-        }
-
-        /* ---------- HERO ---------- */
-
-        .hero {
-            padding: 110px 0 90px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .eyebrow {
-            color: #2563eb;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 7vw, 5.4rem);
-            line-height: 1.05;
-            letter-spacing: -0.055em;
-            color: #111827;
-            margin-bottom: 24px;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            color: #4b5563;
-            max-width: 760px;
-            margin-bottom: 32px;
-        }
-
-        .research-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 32px;
-        }
-
-        .tag {
-            border: 1px solid #dbe3ee;
-            background: #f8fafc;
-            padding: 7px 13px;
-            border-radius: 999px;
-            font-size: 0.88rem;
-            color: #374151;
-        }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 18px;
-            border: 1px solid #d1d5db;
-            border-radius: 7px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: 0.2s ease;
-        }
-
-        .button:hover {
-            border-color: #2563eb;
-            color: #2563eb;
-            transform: translateY(-1px);
-        }
-
-        .button.primary {
-            background: #111827;
-            color: white;
-            border-color: #111827;
-        }
-
-        .button.primary:hover {
-            background: #2563eb;
-            border-color: #2563eb;
-            color: white;
-        }
-
-        /* ---------- SECTIONS ---------- */
-
-        section {
-            padding: 90px 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .section-label {
-            color: #2563eb;
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 8px;
-        }
-
-        h2 {
-            font-size: 2.1rem;
-            letter-spacing: -0.035em;
-            color: #111827;
-            margin-bottom: 24px;
-        }
-
-        .section-intro {
-            max-width: 760px;
-            color: #4b5563;
-            margin-bottom: 42px;
-        }
-
-        /* ---------- ABOUT ---------- */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 0.8fr;
-            gap: 70px;
-        }
-
-        .about-text p {
-            margin-bottom: 18px;
-            color: #4b5563;
-        }
-
-        .focus-list {
-            border-left: 2px solid #2563eb;
-            padding-left: 22px;
-        }
-
-        .focus-list h3 {
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            color: #111827;
-        }
-
-        .focus-list ul {
-            list-style: none;
-        }
-
-        .focus-list li {
-            margin-bottom: 8px;
-            color: #4b5563;
-        }
-
-        /* ---------- RESEARCH ---------- */
-
-        .research-list {
-            display: grid;
-            gap: 18px;
-        }
-
-        .research-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 28px;
-            transition: 0.2s ease;
-        }
-
-        .research-card:hover {
-            border-color: #bfdbfe;
-            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .research-number {
-            color: #9ca3af;
-            font-size: 0.82rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .research-card h3 {
-            color: #111827;
-            font-size: 1.3rem;
-            margin-bottom: 9px;
-        }
-
-        .research-card p {
-            color: #6b7280;
-            max-width: 850px;
-        }
-
-        /* ---------- EXPERIENCE ---------- */
-
-        .timeline {
-            display: grid;
-            gap: 35px;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 190px 1fr;
-            gap: 35px;
-        }
-
-        .timeline-date {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .timeline-content h3 {
-            color: #111827;
-            margin-bottom: 4px;
-        }
-
-        .timeline-content .organization {
-            color: #2563eb;
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            color: #6b7280;
-        }
-
-        /* ---------- PUBLICATIONS ---------- */
-
-        .publication {
-            padding: 24px 0;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .publication:last-child {
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .publication h3 {
-            color: #111827;
-            font-size: 1.08rem;
-            margin-bottom: 6px;
-        }
-
-        .publication p {
-            color: #6b7280;
-            font-size: 0.94rem;
-        }
-
-        /* ---------- CONTACT ---------- */
-
-        .contact-box {
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 40px;
-        }
-
-        .contact-box p {
-            color: #4b5563;
-            max-width: 700px;
-            margin-bottom: 24px;
-        }
-
-        /* ---------- FOOTER ---------- */
-
-        footer {
-            padding: 35px 0;
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-
-        /* ---------- MOBILE ---------- */
-
-        @media (max-width: 750px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 75px 0 65px;
-            }
-
-            section {
-                padding: 65px 0;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 5px;
-            }
-
-            .contact-box {
-                padding: 28px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nabil Walid Rafat | Student Researcher</title>
+
+  <meta
+    name="description"
+    content="Nabil Walid Rafat — Student Researcher working on machine learning, LLM safety, multimodal AI, genomics, and agentic RAG."
+  />
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================================================
+       THEME
+    ========================================================= */
+
+    :root {
+      --bg: #ffffff;
+      --surface: #f7f8fa;
+      --surface-hover: #f0f2f5;
+      --text: #171717;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --nav-bg: rgba(255, 255, 255, 0.82);
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    body.dark {
+      --bg: #0b0d10;
+      --surface: #12151a;
+      --surface-hover: #191d23;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --border: #252a32;
+      --accent: #60a5fa;
+      --accent-soft: rgba(96, 165, 250, 0.1);
+      --nav-bg: rgba(11, 13, 16, 0.82);
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 1000;
+
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: auto;
+
+      padding: 16px 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      background: var(--surface);
+      color: var(--text);
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(12deg);
+      background: var(--surface-hover);
+    }
+
+    /* =========================================================
+       MAIN
+    ========================================================= */
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 110px 0;
+      scroll-margin-top: 70px;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      width: 550px;
+      height: 550px;
+
+      right: -200px;
+      top: 80px;
+
+      background:
+        radial-gradient(
+          circle,
+          var(--accent-soft),
+          transparent 65%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 820px;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 7px 13px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: var(--surface);
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      margin-bottom: 28px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #22c55e;
+
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.1);
+
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.45;
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(20px, 3vw, 27px);
+      font-weight: 500;
+
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      max-width: 700px;
+
+      font-size: 18px;
+      color: var(--muted);
+
+      margin-bottom: 32px;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-link {
+      padding: 10px 17px;
+
+      border: 1px solid var(--border);
+      border-radius: 8px;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      background: var(--surface);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .hero-link:hover {
+      transform: translateY(-3px);
+      background: var(--surface-hover);
+      border-color: var(--accent);
+    }
+
+    .hero-link.primary {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    /* =========================================================
+       SECTION HEADERS
+    ========================================================= */
+
+    .section-label {
+      color: var(--accent);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 5vw, 45px);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+
+      margin-bottom: 22px;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 45px;
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .about-text p + p {
+      margin-top: 18px;
+    }
+
+    .interest-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .interest {
+      padding: 8px 12px;
+
+      border: 1px solid var(--border);
+      border-radius: 7px;
+
+      font-size: 13px;
+
+      background: var(--surface);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .interest:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    /* =========================================================
+       NEWS
+    ========================================================= */
+
+    .news-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+
+      padding: 22px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .news-date {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .news-content {
+      font-size: 15px;
+    }
+
+    .news-content strong {
+      color: var(--accent);
+    }
+
+    /* =========================================================
+       RESEARCH
+    ========================================================= */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .research-card {
+      padding: 30px;
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      background: var(--surface);
+
+      min-height: 230px;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+
+    .research-number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 45px;
+    }
+
+    .research-card h3 {
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .research-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
+    .experience {
+      border-top: 1px solid var(--border);
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+
+      gap: 35px;
+
+      padding: 35px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experience-date {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .experience-title {
+      font-size: 20px;
+      font-weight: 650;
+
+      margin-bottom: 3px;
+    }
+
+    .experience-org {
+      color: var(--accent);
+      font-size: 14px;
+
+      margin-bottom: 13px;
+    }
+
+    .experience-description {
+      color: var(--muted);
+      max-width: 750px;
+      font-size: 15px;
+    }
+
+    /* =========================================================
+       PUBLICATIONS
+    ========================================================= */
+
+    .publication {
+      padding: 30px;
+
+      border: 1px solid var(--border);
+      border-radius: 13px;
+
+      background: var(--surface);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .publication:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .publication + .publication {
+      margin-top: 15px;
+    }
+
+    .publication-type {
+      color: var(--accent);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+
+      margin-bottom: 10px;
+    }
+
+    .publication h3 {
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .publication-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      margin-bottom: 25px;
+    }
+
+    .filter-btn {
+      padding: 8px 14px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: transparent;
+      color: var(--muted);
+
+      cursor: pointer;
+
+      font-size: 13px;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .project {
+      padding: 28px;
+
+      border: 1px solid var(--border);
+      border-radius: 13px;
+
+      background: var(--surface);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .project.hidden {
+      display: none;
+    }
+
+    .project-category {
+      color: var(--accent);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      margin-bottom: 13px;
+    }
+
+    .project h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .skill-box {
+      padding: 22px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: var(--surface);
+    }
+
+    .skill-box h3 {
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .skill-box p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       EDUCATION
+    ========================================================= */
+
+    .education {
+      padding: 30px;
+
+      border: 1px solid var(--border);
+      border-radius: 13px;
+
+      background: var(--surface);
+    }
+
+    .education h3 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .education-school {
+      color: var(--accent);
+      margin-bottom: 7px;
+    }
+
+    .education-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      text-align: center;
+
+      padding: 120px 0;
+    }
+
+    .contact h2 {
+      font-size: clamp(36px, 6vw, 58px);
+
+      letter-spacing: -0.045em;
+
+      margin-bottom: 18px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .contact-email {
+      display: inline-block;
+
+      padding: 12px 20px;
+
+      border: 1px solid var(--border);
+      border-radius: 8px;
+
+      background: var(--surface);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .contact-email:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+
+      padding: 28px 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: auto;
+
+      padding: 0 24px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================================================
+       SCROLL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .news-item {
+        grid-template-columns: 90px 1fr;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      main {
+        padding: 0 18px;
+      }
+
+      .nav-inner {
+        padding: 14px 18px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
-<nav>
-    <div class="container nav-inner">
+  <nav class="navbar">
 
-        <a href="#" class="logo">Nabil Walid Rafat</a>
+    <div class="nav-inner">
 
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#experience">Experience</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
-        </div>
+      <a href="#home" class="nav-logo">
+        NWR
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle dark mode"
+        >
+          ☾
+        </button>
+
+      </div>
 
     </div>
-</nav>
+
+  </nav>
 
 
-<!-- ================= HERO ================= -->
+  <main>
 
-<header class="hero">
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-    <div class="container hero-content">
+    <section class="hero" id="home">
 
-        <div class="eyebrow">
-            AI Researcher · ML Engineer
+      <div class="hero-content reveal">
+
+        <div class="status">
+
+          <span class="status-dot"></span>
+
+          Student Researcher · Elite Research Lab
+
         </div>
 
         <h1>
-            Nabil Walid Rafat
+          Nabil Walid
+          <span>Rafat.</span>
         </h1>
 
+        <div class="hero-subtitle">
+          Student Researcher · AI / ML
+        </div>
+
         <p class="hero-description">
-            I work on machine learning and artificial intelligence,
-            with a focus on reliable and robust AI systems across
-            language, vision, and biological domains.
+
+          I work on machine learning and artificial intelligence,
+          with research interests spanning LLM safety, multimodal
+          learning, agentic AI, and genomics.
+
         </p>
 
-        <div class="research-tags">
-            <span class="tag">LLM Safety</span>
-            <span class="tag">Multimodal AI</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">Genomics</span>
-            <span class="tag">RAG Systems</span>
+        <div class="hero-links">
+
+          <a
+            href="https://github.com/Nabil0090"
+            target="_blank"
+            class="hero-link primary"
+          >
+            GitHub ↗
+          </a>
+
+          <a
+            href="#publications"
+            class="hero-link"
+          >
+            Publications
+          </a>
+
+          <a
+            href="#research"
+            class="hero-link"
+          >
+            Research
+          </a>
+
+          <a
+            href="mailto:rafatnabil50@gmail.com"
+            class="hero-link"
+          >
+            Email
+          </a>
+
         </div>
 
-        <div class="social-links">
+      </div>
 
-            <a class="button primary"
-               href="https://github.com/Nabil0090"
-               target="_blank">
-                GitHub
-            </a>
+    </section>
 
-            <a class="button"
-               href="#contact">
-                Contact
-            </a>
 
-            <!-- We will add LinkedIn, Google Scholar and CV later -->
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about">
+
+      <div class="section-label reveal">
+        01 / About
+      </div>
+
+      <h2 class="section-title reveal">
+        Research-driven AI development.
+      </h2>
+
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+
+          <p>
+            I am a Computer Science and Engineering graduate from
+            BRAC University with a focus on machine learning and
+            artificial intelligence research.
+          </p>
+
+          <p>
+            My work explores reliable and robust AI systems across
+            language models, multimodal learning, retrieval-augmented
+            generation, and biological sequence modeling.
+          </p>
+
+          <p>
+            I am particularly interested in building systems that
+            can reason effectively while remaining robust,
+            interpretable, and dependable in challenging settings.
+          </p>
 
         </div>
 
-    </div>
+        <div class="reveal">
 
-</header>
+          <div class="section-label">
+            Research interests
+          </div>
+
+          <div class="interest-list">
+
+            <span class="interest">Machine Learning</span>
+            <span class="interest">NLP</span>
+            <span class="interest">LLMs</span>
+            <span class="interest">LLM Safety</span>
+            <span class="interest">Multimodal AI</span>
+            <span class="interest">Agentic AI</span>
+            <span class="interest">Genomics</span>
+            <span class="interest">RAG</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
-<!-- ================= ABOUT ================= -->
+    <!-- =====================================================
+         NEWS
+    ====================================================== -->
 
-<section id="about">
+    <section id="news">
 
-    <div class="container">
+      <div class="section-label reveal">
+        02 / Latest
+      </div>
 
-        <div class="section-label">About</div>
+      <h2 class="section-title reveal">
+        Recent activity.
+      </h2>
 
-        <h2>Research-driven AI development.</h2>
+      <div class="news-list">
 
-        <div class="about-grid">
+        <div class="news-item reveal">
 
-            <div class="about-text">
+          <div class="news-date">
+            Present
+          </div>
 
-                <p>
-                    I am a computer science researcher working at the
-                    intersection of machine learning, large language
-                    models, multimodal AI, and biological data.
-                </p>
+          <div class="news-content">
+            Working as a <strong>Student Researcher at Elite Research Lab</strong>.
+          </div>
 
-                <p>
-                    My research interests center on building AI systems
-                    that are not only capable, but also reliable,
-                    robust, and better grounded in their underlying
-                    knowledge.
-                </p>
+        </div>
 
-                <p>
-                    I am particularly interested in problems involving
-                    model alignment and safety, multimodal reasoning,
-                    retrieval-augmented systems, and machine learning
-                    for genomics.
-                </p>
+        <div class="news-item reveal">
 
+          <div class="news-date">
+            2026
+          </div>
+
+          <div class="news-content">
+            Developing <strong>CisRAG</strong>, a dynamic routing
+            framework for bio-agentic RAG in genomics.
+          </div>
+
+        </div>
+
+        <div class="news-item reveal">
+
+          <div class="news-date">
+            2026
+          </div>
+
+          <div class="news-content">
+            Completed research internship work on
+            <strong>multimodal VQA</strong> at AMIR Lab.
+          </div>
+
+        </div>
+
+        <div class="news-item reveal">
+
+          <div class="news-date">
+            2026
+          </div>
+
+          <div class="news-content">
+            Conference paper published at
+            <strong>ICECTE 2026</strong>.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESEARCH
+    ====================================================== -->
+
+    <section id="research">
+
+      <div class="section-label reveal">
+        03 / Research
+      </div>
+
+      <h2 class="section-title reveal">
+        Areas I work in.
+      </h2>
+
+      <p class="section-intro reveal">
+
+        My research sits at the intersection of machine learning,
+        language, vision, and biological data.
+
+      </p>
+
+      <div class="research-grid">
+
+        <article class="research-card reveal">
+
+          <div class="research-number">
+            01
+          </div>
+
+          <h3>
+            LLM Safety
+          </h3>
+
+          <p>
+            Robustness, jailbreak prevention, knowledge distillation,
+            and reliable behavior in language models.
+          </p>
+
+        </article>
+
+
+        <article class="research-card reveal">
+
+          <div class="research-number">
+            02
+          </div>
+
+          <h3>
+            Multimodal AI
+          </h3>
+
+          <p>
+            Vision-language modeling, multimodal fusion, VQA,
+            Q-Former architectures, and regional reasoning.
+          </p>
+
+        </article>
+
+
+        <article class="research-card reveal">
+
+          <div class="research-number">
+            03
+          </div>
+
+          <h3>
+            Genomics & RAG
+          </h3>
+
+          <p>
+            Genomic sequence modeling, biological AI, agentic RAG,
+            retrieval, and reasoning over DNA sequences.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
+
+    <section id="experience">
+
+      <div class="section-label reveal">
+        04 / Experience
+      </div>
+
+      <h2 class="section-title reveal">
+        Research experience.
+      </h2>
+
+      <div class="experience">
+
+
+        <article class="experience-item reveal">
+
+          <div class="experience-date">
+            Present
+          </div>
+
+          <div>
+
+            <div class="experience-title">
+              Student Researcher
             </div>
 
-            <div class="focus-list">
-
-                <h3>Current research interests</h3>
-
-                <ul>
-                    <li>→ LLM safety and alignment</li>
-                    <li>→ Multimodal reasoning</li>
-                    <li>→ Vision-language models</li>
-                    <li>→ Genomic sequence modeling</li>
-                    <li>→ Reliable AI systems</li>
-                    <li>→ Retrieval-augmented generation</li>
-                </ul>
-
+            <div class="experience-org">
+              Elite Research Lab
             </div>
+
+            <p class="experience-description">
+              Working on research involving artificial intelligence
+              and machine learning.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-item reveal">
+
+          <div class="experience-date">
+            Sep 2026 – Present
+          </div>
+
+          <div>
+
+            <div class="experience-title">
+              Independent Research
+            </div>
+
+            <div class="experience-org">
+              BRAC University
+            </div>
+
+            <p class="experience-description">
+              Developing CisRAG, a dynamic routing algorithm for a
+              bio-agentic RAG system in genomics, focusing on
+              capability-aware source selection and hallucination-
+              resistant reasoning over raw DNA sequence prompts.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-item reveal">
+
+          <div class="experience-date">
+            Feb 2026 – Aug 2026
+          </div>
+
+          <div>
+
+            <div class="experience-title">
+              Research Intern
+            </div>
+
+            <div class="experience-org">
+              Advanced Machine Intelligence Research Lab
+            </div>
+
+            <p class="experience-description">
+              Developed MGQ-Former, a tri-modal fusion architecture
+              for remote sensing visual question answering, combining
+              vision-language representations with a dual-path gated
+              pooling mechanism.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-item reveal">
+
+          <div class="experience-date">
+            2025 – 2026
+          </div>
+
+          <div>
+
+            <div class="experience-title">
+              Undergraduate Thesis Researcher
+            </div>
+
+            <div class="experience-org">
+              BRAC University
+            </div>
+
+            <p class="experience-description">
+              Developed a dynamic gated distillation framework using
+              a harm-score predictive model and dual-teacher knowledge
+              distillation to improve jailbreak robustness while
+              preserving general reasoning in smaller language models.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PUBLICATIONS
+    ====================================================== -->
+
+    <section id="publications">
+
+      <div class="section-label reveal">
+        05 / Publications
+      </div>
+
+      <h2 class="section-title reveal">
+        Selected publications.
+      </h2>
+
+      <article class="publication reveal">
+
+        <div class="publication-type">
+          Conference Paper
+        </div>
+
+        <h3>
+          Comparative Analysis of LLMs Against Jailbreak Prompts
+        </h3>
+
+        <div class="publication-meta">
+          ICECTE 2026
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
+
+    <section id="projects">
+
+      <div class="section-label reveal">
+        06 / Projects
+      </div>
+
+      <h2 class="section-title reveal">
+        Selected projects.
+      </h2>
+
+      <p class="section-intro reveal">
+
+        A selection of research and engineering projects across
+        machine learning, genomics, NLP, and software development.
+
+      </p>
+
+
+      <div class="filter-buttons reveal">
+
+        <button
+          class="filter-btn active"
+          data-filter="all"
+        >
+          All
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="research"
+        >
+          Research
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="ai"
+        >
+          AI / ML
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="software"
+        >
+          Software
+        </button>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <article
+          class="project reveal"
+          data-category="research"
+        >
+
+          <div class="project-category">
+            Research · RAG · Genomics
+          </div>
+
+          <h3>
+            CisRAG
+          </h3>
+
+          <p>
+            A dynamic routing system for bio-agentic RAG in genomics,
+            designed for capability-aware source selection and
+            reasoning over raw DNA sequence prompts.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project reveal"
+          data-category="research"
+        >
+
+          <div class="project-category">
+            Research · Multimodal AI
+          </div>
+
+          <h3>
+            MGQ-Former
+          </h3>
+
+          <p>
+            A tri-modal fusion architecture for remote sensing VQA
+            combining vision-language representations with dual-path
+            gated pooling.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project reveal"
+          data-category="research"
+        >
+
+          <div class="project-category">
+            Research · LLM
+          </div>
+
+          <h3>
+            Dynamic Gated Distillation
+          </h3>
+
+          <p>
+            A dual-teacher knowledge distillation framework designed
+            to improve jailbreak robustness while preserving general
+            reasoning.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project reveal"
+          data-category="ai"
+        >
+
+          <div class="project-category">
+            AI · RAG
+          </div>
+
+          <h3>
+            HR Policy RAG Chatbot
+          </h3>
+
+          <p>
+            A RAG-based chatbot with per-user document uploads,
+            dynamic query routing, document ingestion, retrieval,
+            and generation.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project reveal"
+          data-category="research"
+        >
+
+          <div class="project-category">
+            Genomics · Fine-tuning
+          </div>
+
+          <h3>
+            Omni DNA Model Fine-tuning
+          </h3>
+
+          <p>
+            Fine-tuned Omni DNA on human promoter and enhancer
+            datasets for binary genomic sequence classification.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project reveal"
+          data-category="ai"
+        >
+
+          <div class="project-category">
+            Machine Learning · Time Series
+          </div>
+
+          <h3>
+            Amazon Stock Forecasting
+          </h3>
+
+          <p>
+            Applied LSTM and statistical models to historical Amazon
+            data and deployed the resulting system with a Gradio
+            interface.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project reveal"
+          data-category="ai"
+        >
+
+          <div class="project-category">
+            Machine Learning · NLP
+          </div>
+
+          <h3>
+            Question Answer Classification
+          </h3>
+
+          <p>
+            Applied machine learning and neural network models to a
+            question-answer classification dataset.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project reveal"
+          data-category="software"
+        >
+
+          <div class="project-category">
+            Software · MERN
+          </div>
+
+          <h3>
+            Food Ordering Application
+          </h3>
+
+          <p>
+            Built a food ordering application using the MERN stack
+            as part of a system design course.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section id="skills">
+
+      <div class="section-label reveal">
+        07 / Skills
+      </div>
+
+      <h2 class="section-title reveal">
+        Technical toolkit.
+      </h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-box reveal">
+
+          <h3>
+            Programming & Data Science
+          </h3>
+
+          <p>
+            Python · PyTorch · Scikit-Learn · C · SQL · FAISS
+          </p>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="skill-box reveal">
+
+          <h3>
+            Machine Learning & AI
+          </h3>
+
+          <p>
+            Image Processing · LLM Fine-tuning · LLM Benchmarking
+          </p>
+
+        </div>
 
 
-<!-- ================= RESEARCH ================= -->
+        <div class="skill-box reveal">
 
-<section id="research">
+          <h3>
+            Bioinformatics & Genomics
+          </h3>
 
-    <div class="container">
+          <p>
+            FASTA · FASTQ · scRNA-seq · Gene Expression ·
+            Alignment · Clustering · PCA
+          </p>
 
-        <div class="section-label">Research</div>
+        </div>
 
-        <h2>Selected research</h2>
 
-        <p class="section-intro">
-            My work spans language model safety, multimodal AI,
-            and biological sequence modeling. These projects explore
-            different aspects of building more reliable AI systems.
+        <div class="skill-box reveal">
+
+          <h3>
+            Advanced Modeling
+          </h3>
+
+          <p>
+            Knowledge Distillation · Multimodal Fusion ·
+            Q-Former · Agentic RAG
+          </p>
+
+        </div>
+
+
+        <div class="skill-box reveal">
+
+          <h3>
+            Web Development
+          </h3>
+
+          <p>
+            MongoDB · Express.js · React · Node.js
+          </p>
+
+        </div>
+
+
+        <div class="skill-box reveal">
+
+          <h3>
+            Tools & Systems
+          </h3>
+
+          <p>
+            Linux · Shell Scripting · Bash · Git · GitHub
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDUCATION
+    ====================================================== -->
+
+    <section id="education">
+
+      <div class="section-label reveal">
+        08 / Education
+      </div>
+
+      <h2 class="section-title reveal">
+        Academic background.
+      </h2>
+
+      <div class="education reveal">
+
+        <h3>
+          B.Sc. in Computer Science and Engineering
+        </h3>
+
+        <div class="education-school">
+          BRAC University · Dhaka, Bangladesh
+        </div>
+
+        <div class="education-meta">
+          Jan 2022 – Jan 2026 · CGPA 3.21 / 4.00
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section id="contact" class="contact">
+
+      <div class="reveal">
+
+        <div class="section-label">
+          09 / Contact
+        </div>
+
+        <h2>
+          Let's connect.
+        </h2>
+
+        <p>
+          Interested in research, collaboration, or simply
+          discussing AI and machine learning?
         </p>
 
-        <div class="research-list">
+        <a
+          href="mailto:rafatnabil50@gmail.com"
+          class="contact-email"
+        >
+          rafatnabil50@gmail.com ↗
+        </a>
 
-            <article class="research-card">
+      </div>
 
-                <div class="research-number">01 · LLM SAFETY</div>
+    </section>
 
-                <h3>
-                    Dynamic Gated Knowledge Distillation
-                </h3>
-
-                <p>
-                    A dual-teacher knowledge distillation framework
-                    designed to reduce harmful capability transfer
-                    while preserving general reasoning ability in
-                    smaller language models.
-                </p>
-
-            </article>
+  </main>
 
 
-            <article class="research-card">
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
 
-                <div class="research-number">02 · GENOMICS + RAG</div>
+  <footer>
 
-                <h3>
-                    CisRAG
-                </h3>
+    <div class="footer-inner">
 
-                <p>
-                    A confidence-routed agentic retrieval framework
-                    for promoter and enhancer reasoning from raw DNA
-                    sequences, combining sequence classification,
-                    regulatory knowledge retrieval, and motif analysis.
-                </p>
+      <span>
+        © 2026 Nabil Walid Rafat
+      </span>
 
-            </article>
-
-
-            <article class="research-card">
-
-                <div class="research-number">03 · MULTIMODAL AI</div>
-
-                <h3>
-                    Reliable Visual Question Answering
-                </h3>
-
-                <p>
-                    Research on multimodal question answering with
-                    an emphasis on uncertainty estimation, regional
-                    reasoning, and reliable prediction in specialized
-                    visual domains.
-                </p>
-
-            </article>
-
-
-            <article class="research-card">
-
-                <div class="research-number">04 · VISION-LANGUAGE MODELS</div>
-
-                <h3>
-                    Multimodal Fusion for VQA
-                </h3>
-
-                <p>
-                    Exploration of transformer-based vision-language
-                    architectures for relational and domain-specific
-                    visual question answering.
-                </p>
-
-            </article>
-
-        </div>
+      <span>
+        Student Researcher · AI / ML
+      </span>
 
     </div>
 
-</section>
+  </footer>
 
 
-<!-- ================= EXPERIENCE ================= -->
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
 
-<section id="experience">
+  <script>
 
-    <div class="container">
+    /* -------------------------------------------------------
+       DARK MODE
+    ------------------------------------------------------- */
 
-        <div class="section-label">Experience</div>
+    const themeToggle =
+      document.getElementById("themeToggle");
 
-        <h2>Research experience</h2>
+    const savedTheme =
+      localStorage.getItem("theme");
 
-        <div class="timeline">
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      themeToggle.textContent = "☀";
+    }
 
-            <div class="timeline-item">
+    themeToggle.addEventListener("click", () => {
 
-                <div class="timeline-date">
-                    2026 — Present
-                </div>
+      document.body.classList.toggle("dark");
 
-                <div class="timeline-content">
+      const isDark =
+        document.body.classList.contains("dark");
 
-                    <h3>Research Assistant Intern</h3>
+      localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+      );
 
-                    <div class="organization">
-                        Advanced Machine Intelligence Research Lab
-                    </div>
+      themeToggle.textContent =
+        isDark ? "☀" : "☾";
 
-                    <p>
-                        Working on multimodal AI, visual question
-                        answering, vision-language models, and
-                        machine learning for biological applications.
-                    </p>
+    });
 
-                </div>
 
-            </div>
+    /* -------------------------------------------------------
+       SCROLL REVEAL
+    ------------------------------------------------------- */
 
+    const revealElements =
+      document.querySelectorAll(".reveal");
 
-            <div class="timeline-item">
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
 
-                <div class="timeline-date">
-                    2024 — Present
-                </div>
+          entries.forEach((entry) => {
 
-                <div class="timeline-content">
+            if (entry.isIntersecting) {
 
-                    <h3>Independent Research</h3>
+              entry.target.classList.add("visible");
 
-                    <div class="organization">
-                        Machine Learning & AI
-                    </div>
+              revealObserver.unobserve(
+                entry.target
+              );
 
-                    <p>
-                        Conducting research across LLM safety,
-                        knowledge distillation, multimodal learning,
-                        retrieval-augmented systems, and genomics.
-                    </p>
+            }
 
-                </div>
+          });
 
-            </div>
+        },
+        {
+          threshold: 0.12
+        }
+      );
 
-        </div>
 
-    </div>
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
 
-</section>
 
+    /* -------------------------------------------------------
+       PROJECT FILTER
+    ------------------------------------------------------- */
 
-<!-- ================= PUBLICATIONS ================= -->
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
 
-<section id="publications">
+    const projects =
+      document.querySelectorAll(".project");
 
-    <div class="container">
 
-        <div class="section-label">Publications</div>
+    filterButtons.forEach((button) => {
 
-        <h2>Selected publications & manuscripts</h2>
+      button.addEventListener("click", () => {
 
-        <div class="publication">
+        const filter =
+          button.dataset.filter;
 
-            <h3>
-                Comparative Analysis of LLMs Against Jailbreak Prompts
-            </h3>
 
-            <p>
-                Conference paper · ICECTE 2026
-            </p>
+        filterButtons.forEach((btn) => {
+          btn.classList.remove("active");
+        });
 
-        </div>
+        button.classList.add("active");
 
 
-        <div class="publication">
+        projects.forEach((project) => {
 
-            <h3>
-                Adaptive Uncertainty-Guided Regional Reasoning for
-                Reliable Brain Tumor MRI Visual Question Answering
-            </h3>
+          const category =
+            project.dataset.category;
 
-            <p>
-                Manuscript under review · IEEE Open Journal
-            </p>
 
-        </div>
+          if (
+            filter === "all" ||
+            category === filter
+          ) {
 
-    </div>
+            project.classList.remove("hidden");
 
-</section>
+          } else {
 
+            project.classList.add("hidden");
 
-<!-- ================= CONTACT ================= -->
+          }
 
-<section id="contact">
+        });
 
-    <div class="container">
+      });
 
-        <div class="section-label">Contact</div>
+    });
 
-        <h2>Let's connect.</h2>
 
-        <div class="contact-box">
+    /* -------------------------------------------------------
+       ACTIVE NAVIGATION
+    ------------------------------------------------------- */
 
-            <p>
-                I am interested in research collaborations,
-                graduate research opportunities, and discussions
-                around machine learning and AI.
-            </p>
+    const sections =
+      document.querySelectorAll("section[id]");
 
-            <div class="social-links">
+    const navLinks =
+      document.querySelectorAll(".nav-links a");
 
-                <a class="button primary"
-                   href="https://github.com/Nabil0090"
-                   target="_blank">
-                    GitHub
-                </a>
 
-                <!-- Add your email / LinkedIn / Google Scholar here later -->
+    window.addEventListener("scroll", () => {
 
-            </div>
+      let current = "";
 
-        </div>
+      sections.forEach((section) => {
 
-    </div>
+        const sectionTop =
+          section.offsetTop - 120;
 
-</section>
+        if (
+          window.scrollY >= sectionTop
+        ) {
+          current = section.id;
+        }
 
+      });
 
-<!-- ================= FOOTER ================= -->
 
-<footer>
+      navLinks.forEach((link) => {
 
-    <div class="container">
+        link.classList.remove("active");
 
-        © 2026 Nabil Walid Rafat.
-        Built with HTML & GitHub Pages.
+        if (
+          link.getAttribute("href") ===
+          "#" + current
+        ) {
+          link.classList.add("active");
+        }
 
-    </div>
+      });
 
-</footer>
+    });
+
+  </script>
 
 </body>
 </html>
