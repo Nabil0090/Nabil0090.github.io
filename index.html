@@ -1,1 +1,756 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nabil Walid Rafat | AI Researcher</title>
+
+    <meta name="description"
+          content="Nabil Walid Rafat — AI Researcher and ML Engineer working on LLM safety, multimodal AI, and genomics.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            background: #ffffff;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        /* ---------- NAVIGATION ---------- */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-inner {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+            color: #4b5563;
+        }
+
+        .nav-links a:hover {
+            color: #111827;
+        }
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            padding: 110px 0 90px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #2563eb;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 5.4rem);
+            line-height: 1.05;
+            letter-spacing: -0.055em;
+            color: #111827;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 760px;
+            margin-bottom: 32px;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .tag {
+            border: 1px solid #dbe3ee;
+            background: #f8fafc;
+            padding: 7px 13px;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            color: #374151;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .button.primary {
+            background: #111827;
+            color: white;
+            border-color: #111827;
+        }
+
+        .button.primary:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+        }
+
+        /* ---------- SECTIONS ---------- */
+
+        section {
+            padding: 90px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-label {
+            color: #2563eb;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 2.1rem;
+            letter-spacing: -0.035em;
+            color: #111827;
+            margin-bottom: 24px;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            color: #4b5563;
+            margin-bottom: 42px;
+        }
+
+        /* ---------- ABOUT ---------- */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 70px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: #4b5563;
+        }
+
+        .focus-list {
+            border-left: 2px solid #2563eb;
+            padding-left: 22px;
+        }
+
+        .focus-list h3 {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .focus-list ul {
+            list-style: none;
+        }
+
+        .focus-list li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+
+        /* ---------- RESEARCH ---------- */
+
+        .research-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .research-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 28px;
+            transition: 0.2s ease;
+        }
+
+        .research-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .research-number {
+            color: #9ca3af;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .research-card h3 {
+            color: #111827;
+            font-size: 1.3rem;
+            margin-bottom: 9px;
+        }
+
+        .research-card p {
+            color: #6b7280;
+            max-width: 850px;
+        }
+
+        /* ---------- EXPERIENCE ---------- */
+
+        .timeline {
+            display: grid;
+            gap: 35px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 35px;
+        }
+
+        .timeline-date {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content h3 {
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .timeline-content .organization {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            color: #6b7280;
+        }
+
+        /* ---------- PUBLICATIONS ---------- */
+
+        .publication {
+            padding: 24px 0;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .publication:last-child {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .publication h3 {
+            color: #111827;
+            font-size: 1.08rem;
+            margin-bottom: 6px;
+        }
+
+        .publication p {
+            color: #6b7280;
+            font-size: 0.94rem;
+        }
+
+        /* ---------- CONTACT ---------- */
+
+        .contact-box {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .contact-box p {
+            color: #4b5563;
+            max-width: 700px;
+            margin-bottom: 24px;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            padding: 35px 0;
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 750px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 75px 0 65px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .contact-box {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">Nabil Walid Rafat</a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="container hero-content">
+
+        <div class="eyebrow">
+            AI Researcher · ML Engineer
+        </div>
+
+        <h1>
+            Nabil Walid Rafat
+        </h1>
+
+        <p class="hero-description">
+            I work on machine learning and artificial intelligence,
+            with a focus on reliable and robust AI systems across
+            language, vision, and biological domains.
+        </p>
+
+        <div class="research-tags">
+            <span class="tag">LLM Safety</span>
+            <span class="tag">Multimodal AI</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Genomics</span>
+            <span class="tag">RAG Systems</span>
+        </div>
+
+        <div class="social-links">
+
+            <a class="button primary"
+               href="https://github.com/Nabil0090"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a class="button"
+               href="#contact">
+                Contact
+            </a>
+
+            <!-- We will add LinkedIn, Google Scholar and CV later -->
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">About</div>
+
+        <h2>Research-driven AI development.</h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am a computer science researcher working at the
+                    intersection of machine learning, large language
+                    models, multimodal AI, and biological data.
+                </p>
+
+                <p>
+                    My research interests center on building AI systems
+                    that are not only capable, but also reliable,
+                    robust, and better grounded in their underlying
+                    knowledge.
+                </p>
+
+                <p>
+                    I am particularly interested in problems involving
+                    model alignment and safety, multimodal reasoning,
+                    retrieval-augmented systems, and machine learning
+                    for genomics.
+                </p>
+
+            </div>
+
+            <div class="focus-list">
+
+                <h3>Current research interests</h3>
+
+                <ul>
+                    <li>→ LLM safety and alignment</li>
+                    <li>→ Multimodal reasoning</li>
+                    <li>→ Vision-language models</li>
+                    <li>→ Genomic sequence modeling</li>
+                    <li>→ Reliable AI systems</li>
+                    <li>→ Retrieval-augmented generation</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESEARCH ================= -->
+
+<section id="research">
+
+    <div class="container">
+
+        <div class="section-label">Research</div>
+
+        <h2>Selected research</h2>
+
+        <p class="section-intro">
+            My work spans language model safety, multimodal AI,
+            and biological sequence modeling. These projects explore
+            different aspects of building more reliable AI systems.
+        </p>
+
+        <div class="research-list">
+
+            <article class="research-card">
+
+                <div class="research-number">01 · LLM SAFETY</div>
+
+                <h3>
+                    Dynamic Gated Knowledge Distillation
+                </h3>
+
+                <p>
+                    A dual-teacher knowledge distillation framework
+                    designed to reduce harmful capability transfer
+                    while preserving general reasoning ability in
+                    smaller language models.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">02 · GENOMICS + RAG</div>
+
+                <h3>
+                    CisRAG
+                </h3>
+
+                <p>
+                    A confidence-routed agentic retrieval framework
+                    for promoter and enhancer reasoning from raw DNA
+                    sequences, combining sequence classification,
+                    regulatory knowledge retrieval, and motif analysis.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">03 · MULTIMODAL AI</div>
+
+                <h3>
+                    Reliable Visual Question Answering
+                </h3>
+
+                <p>
+                    Research on multimodal question answering with
+                    an emphasis on uncertainty estimation, regional
+                    reasoning, and reliable prediction in specialized
+                    visual domains.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">04 · VISION-LANGUAGE MODELS</div>
+
+                <h3>
+                    Multimodal Fusion for VQA
+                </h3>
+
+                <p>
+                    Exploration of transformer-based vision-language
+                    architectures for relational and domain-specific
+                    visual question answering.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-label">Experience</div>
+
+        <h2>Research experience</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    2026 — Present
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>Research Assistant Intern</h3>
+
+                    <div class="organization">
+                        Advanced Machine Intelligence Research Lab
+                    </div>
+
+                    <p>
+                        Working on multimodal AI, visual question
+                        answering, vision-language models, and
+                        machine learning for biological applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    2024 — Present
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>Independent Research</h3>
+
+                    <div class="organization">
+                        Machine Learning & AI
+                    </div>
+
+                    <p>
+                        Conducting research across LLM safety,
+                        knowledge distillation, multimodal learning,
+                        retrieval-augmented systems, and genomics.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PUBLICATIONS ================= -->
+
+<section id="publications">
+
+    <div class="container">
+
+        <div class="section-label">Publications</div>
+
+        <h2>Selected publications & manuscripts</h2>
+
+        <div class="publication">
+
+            <h3>
+                Comparative Analysis of LLMs Against Jailbreak Prompts
+            </h3>
+
+            <p>
+                Conference paper · ICECTE 2026
+            </p>
+
+        </div>
+
+
+        <div class="publication">
+
+            <h3>
+                Adaptive Uncertainty-Guided Regional Reasoning for
+                Reliable Brain Tumor MRI Visual Question Answering
+            </h3>
+
+            <p>
+                Manuscript under review · IEEE Open Journal
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-label">Contact</div>
+
+        <h2>Let's connect.</h2>
+
+        <div class="contact-box">
+
+            <p>
+                I am interested in research collaborations,
+                graduate research opportunities, and discussions
+                around machine learning and AI.
+            </p>
+
+            <div class="social-links">
+
+                <a class="button primary"
+                   href="https://github.com/Nabil0090"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <!-- Add your email / LinkedIn / Google Scholar here later -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Nabil Walid Rafat.
+        Built with HTML & GitHub Pages.
+
+    </div>
+
+</footer>
+
+</body>
+</html>
