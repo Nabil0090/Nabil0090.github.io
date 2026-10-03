@@ -3,90 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Nabil Walid Rafat</title>
-
-  <meta
-    name="description"
-    content="Nabil Walid Rafat — Student Researcher working on machine learning, LLM safety, multimodal AI, genomics, and agentic AI."
-  >
-
+  <meta name="description" content="Nabil Walid Rafat — ML researcher working on LLM safety, agentic RAG for genomics, and multimodal learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-
-    /* =====================================================
-       GLOBAL
-    ===================================================== */
-
     :root {
       --background: #ffffff;
-      --text: #222222;
-      --secondary: #666666;
-      --light: #888888;
-      --border: #e5e5e5;
+      --text: #1d1d1f;
+      --secondary: #55595f;
+      --light: #8a8f96;
+      --border: #e6e6e6;
       --blue: #2457a6;
       --blue-hover: #173f7a;
-      --max-width: 920px;
+      --blue-soft: #eef3fb;
+      --max-width: 960px;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+      --mono: "JetBrains Mono", Consolas, monospace;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--background);
       color: var(--text);
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        Times,
-        serif;
-
-      font-size: 16px;
+      font-family: var(--sans);
+      font-size: 17.5px;
       line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: var(--blue);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--blue-hover);
-      text-decoration: underline;
-    }
-
-    p {
-      margin-top: 0;
-    }
-
-
-    /* =====================================================
-       PAGE CONTAINER
-    ===================================================== */
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-hover); text-decoration: underline; }
+    p { margin-top: 0; }
+    strong { font-weight: 600; color: var(--text); }
 
     .container {
-      width: min(
-        calc(100% - 48px),
-        var(--max-width)
-      );
-
+      width: min(calc(100% - 48px), var(--max-width));
       margin: 0 auto;
     }
 
-
-    /* =====================================================
-       NAVIGATION
-    ===================================================== */
-
     nav {
-      padding: 27px 0 20px;
-
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 20px 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
     }
 
@@ -94,1587 +61,671 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 25px;
     }
 
     .nav-name {
-      font-size: 18px;
-      font-weight: bold;
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 600;
       color: var(--text);
     }
 
-    .nav-name:hover {
-      text-decoration: none;
-      color: var(--text);
-    }
+    .nav-name:hover { text-decoration: none; color: var(--text); }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-
-      gap: 18px;
-
-      font-size: 14px;
+      gap: 24px;
+      font-size: 15.5px;
+      font-weight: 500;
     }
 
-    .nav-links a {
-      color: var(--secondary);
-    }
+    .nav-links a { color: var(--secondary); }
+    .nav-links a:hover { color: var(--blue); text-decoration: none; }
 
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .hero {
-      padding: 75px 0 70px;
-    }
+    .hero { padding: 80px 0 72px; }
 
     .hero-grid {
       display: grid;
-
-      grid-template-columns:
-        1fr 185px;
-
-      gap: 65px;
-
+      grid-template-columns: 1fr 210px;
+      gap: 64px;
       align-items: start;
     }
 
     .hero h1 {
-      margin: 0 0 8px;
-
-      font-size: 42px;
-      line-height: 1.2;
-
-      font-weight: normal;
-
-      letter-spacing: -0.5px;
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: 58px;
+      line-height: 1.08;
+      font-weight: 500;
+      letter-spacing: -1.2px;
     }
 
     .hero-role {
-      margin-bottom: 25px;
-
-      color: var(--secondary);
-
-      font-size: 17px;
+      margin-bottom: 28px;
+      color: var(--blue);
+      font-family: var(--mono);
+      font-size: 14.5px;
+      letter-spacing: 0.2px;
     }
 
     .hero-text {
-      color: #444444;
-
-      font-size: 17px;
-
-      max-width: 650px;
+      color: #3a3d42;
+      font-size: 18.5px;
+      max-width: 660px;
     }
 
-    .hero-text p {
-      margin-bottom: 17px;
+    .hero-text p { margin-bottom: 18px; }
+
+    .profile-photo,
+    .profile-placeholder {
+      width: 210px;
+      height: 252px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .profile-photo {
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(20, 40, 80, 0.10);
     }
 
     .profile-placeholder {
-      width: 175px;
-      height: 210px;
-
-      border: 1px solid var(--border);
-
-      background:
-        linear-gradient(
-          135deg,
-          #f8f8f8,
-          #eeeeee
-        );
-
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
-
+      background: linear-gradient(135deg, #f8f8f8, #eeeeee);
       color: #999999;
-
-      font-family:
-        Arial,
-        sans-serif;
-
-      font-size: 12px;
-
-      text-align: center;
-    }
-
-    /*
-      When you have your profile photo, replace
-      .profile-placeholder with:
-
-      <img class="profile-photo" src="profile.jpg">
-
-      and use the CSS below.
-    */
-
-    .profile-photo {
-      width: 175px;
-      height: 210px;
-
-      object-fit: cover;
-
-      border: 1px solid var(--border);
-    }
-
-
-    /* =====================================================
-       SOCIAL LINKS
-    ===================================================== */
-
-    .social-links {
-      margin-top: 25px;
-
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 18px;
-
-      font-family:
-        Arial,
-        sans-serif;
-
       font-size: 13px;
     }
 
+    .social-links {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-    /* =====================================================
-       SECTIONS
-    ===================================================== */
+    .social-links a {
+      font-size: 14.5px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: var(--text);
+      transition: border-color .2s, color .2s, background-color .2s;
+    }
+
+    .social-links a:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--blue-soft);
+      text-decoration: none;
+    }
 
     section {
-      padding: 55px 0;
-
+      padding: 64px 0;
       border-top: 1px solid var(--border);
     }
 
     .section-title {
-      margin: 0 0 30px;
-
-      font-size: 25px;
-
-      font-weight: normal;
-
-      letter-spacing: -0.2px;
+      margin: 0 0 34px;
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
     }
 
-
-    /* =====================================================
-       NEWS
-    ===================================================== */
+    .about-text { max-width: 760px; font-size: 18px; color: #3a3d42; }
+    .about-text p { margin-bottom: 18px; }
 
     .news {
       display: grid;
-
-      grid-template-columns: 110px 1fr;
-
-      row-gap: 15px;
-
-      font-size: 15px;
+      grid-template-columns: 120px 1fr;
+      row-gap: 18px;
+      font-size: 17px;
     }
 
     .news-date {
       color: var(--light);
-
-      font-family:
-        Arial,
-        sans-serif;
-
-      font-size: 12px;
-
-      padding-top: 3px;
+      font-family: var(--mono);
+      font-size: 13.5px;
+      padding-top: 4px;
     }
 
-    .news-text {
-      color: #444444;
-    }
-
-
-    /* =====================================================
-       RESEARCH FOCUS
-    ===================================================== */
+    .news-text { color: #3a3d42; }
 
     .research-list {
       display: flex;
-
       flex-direction: column;
-
-      gap: 32px;
+      gap: 34px;
     }
 
     .research-item {
       display: grid;
-
-      grid-template-columns: 65px 1fr;
-
+      grid-template-columns: 70px 1fr;
       gap: 20px;
     }
 
     .research-number {
       color: var(--blue);
-
-      font-family:
-        Arial,
-        sans-serif;
-
-      font-size: 13px;
-
-      padding-top: 4px;
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 500;
+      padding-top: 6px;
     }
 
     .research-item h3 {
-      margin: 0 0 5px;
-
-      font-size: 19px;
-
-      font-weight: normal;
+      margin: 0 0 6px;
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
     }
 
-    .research-item p {
-      margin: 0;
-
-      color: var(--secondary);
-
-      font-size: 15px;
-    }
-
-
-    /* =====================================================
-       EXPERIENCE
-    ===================================================== */
+    .research-item p { margin: 0; color: var(--secondary); font-size: 17px; }
 
     .experience-item {
       display: grid;
-
-      grid-template-columns: 170px 1fr;
-
-      gap: 30px;
-
-      padding: 25px 0;
-
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+      padding: 28px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .experience-item:first-child {
-      padding-top: 0;
-    }
+    .experience-item:first-of-type { padding-top: 0; }
 
     .experience-date {
       color: var(--light);
-
-      font-family:
-        Arial,
-        sans-serif;
-
-      font-size: 12px;
+      font-family: var(--mono);
+      font-size: 13.5px;
+      padding-top: 5px;
     }
 
     .experience-title {
       margin-bottom: 2px;
-
-      font-size: 18px;
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 500;
     }
 
     .experience-org {
       color: var(--blue);
-
-      font-size: 14px;
-
-      margin-bottom: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 10px;
     }
 
-    .experience-description {
-      margin: 0;
+    .experience-org span { color: var(--light); font-weight: 400; }
 
-      color: var(--secondary);
+    .experience-description { margin: 0; color: var(--secondary); font-size: 17px; }
+    .experience-description em { color: var(--text); }
 
-      font-size: 15px;
-    }
-
-
-    /* =====================================================
-       PUBLICATIONS
-    ===================================================== */
-
-    .publication {
-      margin-bottom: 30px;
-    }
-
-    .publication:last-child {
-      margin-bottom: 0;
-    }
+    .publication { margin-bottom: 32px; }
 
     .publication-title {
-      font-size: 17px;
-
-      margin-bottom: 4px;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 6px;
     }
 
-    .publication-authors {
-      color: var(--secondary);
-
-      font-size: 14px;
-    }
+    .publication-authors { color: var(--secondary); font-size: 16px; }
+    .publication-authors strong { color: var(--blue); }
 
     .publication-venue {
-      margin-top: 3px;
-
+      margin-top: 4px;
       color: var(--light);
-
-      font-size: 13px;
-
-      font-style: italic;
+      font-family: var(--mono);
+      font-size: 13.5px;
     }
-
-
-    /* =====================================================
-       PROJECTS
-    ===================================================== */
 
     .projects {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      column-gap: 45px;
-      row-gap: 32px;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 48px;
+      row-gap: 34px;
     }
 
-    .project {
-      padding-bottom: 25px;
-
-      border-bottom: 1px solid var(--border);
-    }
+    .project { padding-bottom: 26px; border-bottom: 1px solid var(--border); }
 
     .project h3 {
-      margin: 0 0 5px;
-
-      font-size: 17px;
-
-      font-weight: normal;
+      margin: 0 0 6px;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
     }
 
-    .project p {
-      margin: 0;
+    .project p { margin: 0 0 10px; color: var(--secondary); font-size: 16.5px; }
 
-      color: var(--secondary);
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
-      font-size: 14px;
+    .tags span {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 2px 9px;
+      border-radius: 4px;
+      background: var(--blue-soft);
+      color: var(--blue);
     }
 
+    .more-link { margin-top: 30px; font-size: 16px; font-weight: 500; }
 
-    /* =====================================================
-       EDUCATION
-    ===================================================== */
-
-    .education-item {
-      margin-bottom: 30px;
-    }
-
-    .education-item:last-child {
-      margin-bottom: 0;
-    }
+    .education-item { margin-bottom: 30px; }
+    .education-item:last-child { margin-bottom: 0; }
 
     .education-degree {
-      font-size: 18px;
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 500;
     }
 
-    .education-school {
-      color: var(--blue);
-
-      font-size: 15px;
-    }
+    .education-school { color: var(--blue); font-size: 16.5px; font-weight: 500; }
 
     .education-details {
-      color: var(--secondary);
-
-      font-size: 14px;
+      color: var(--light);
+      font-family: var(--mono);
+      font-size: 13.5px;
+      margin-top: 2px;
     }
-
-
-    /* =====================================================
-       SKILLS
-    ===================================================== */
 
     .skills {
       display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 20px 45px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 48px;
     }
 
-    .skill-category {
-      font-size: 14px;
-    }
+    .skill-category { font-size: 16.5px; }
 
     .skill-category strong {
-      font-weight: normal;
-
-      color: var(--text);
+      display: block;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 2px;
     }
 
-    .skill-category span {
-      color: var(--secondary);
-    }
+    .skill-category span { color: var(--secondary); }
 
-
-    /* =====================================================
-       CONTACT
-    ===================================================== */
-
-    .contact {
-      padding-bottom: 80px;
-    }
-
-    .contact-text {
-      max-width: 600px;
-
-      color: var(--secondary);
-
-      font-size: 16px;
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
+    .contact { padding-bottom: 90px; }
+    .contact-text { max-width: 640px; color: var(--secondary); font-size: 18px; }
 
     footer {
       border-top: 1px solid var(--border);
-
-      padding: 25px 0 35px;
-
+      padding: 26px 0 36px;
       color: var(--light);
-
-      font-family:
-        Arial,
-        sans-serif;
-
-      font-size: 11px;
+      font-family: var(--mono);
+      font-size: 12.5px;
     }
 
-    .footer-inner {
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-
-    /* =====================================================
-       SMALL INTERACTION
-    ===================================================== */
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
 
     .fade-in {
       opacity: 0;
-
-      transform: translateY(8px);
-
-      transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+      transform: translateY(10px);
+      transition: opacity .7s ease, transform .7s ease;
     }
 
-    .fade-in.visible {
-      opacity: 1;
-
-      transform: translateY(0);
-    }
-
-
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 750px) {
-
-      .nav-inner {
-        align-items: flex-start;
-
-        flex-direction: column;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .hero {
-        padding-top: 55px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-      }
-
-      .profile-placeholder,
-      .profile-photo {
-        width: 145px;
-        height: 175px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-
-        gap: 5px;
-      }
-
-      .projects {
-        grid-template-columns: 1fr;
-      }
-
-      .skills {
-        grid-template-columns: 1fr;
-      }
+      .nav-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .nav-links { justify-content: flex-start; gap: 16px; font-size: 15px; }
+      nav { position: static; }
+      .hero { padding-top: 50px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-grid > :last-child { order: -1; }
+      .profile-photo, .profile-placeholder { width: 160px; height: 192px; }
+      .hero h1 { font-size: 44px; }
+      .experience-item { grid-template-columns: 1fr; gap: 6px; }
+      .projects, .skills { grid-template-columns: 1fr; }
     }
-
 
     @media (max-width: 500px) {
-
-      .container {
-        width: min(
-          calc(100% - 32px),
-          var(--max-width)
-        );
-      }
-
-      body {
-        font-size: 15px;
-      }
-
-      .hero h1 {
-        font-size: 33px;
-      }
-
-      .hero-text {
-        font-size: 16px;
-      }
-
-      .news {
-        grid-template-columns: 75px 1fr;
-      }
-
-      .research-item {
-        grid-template-columns: 42px 1fr;
-
-        gap: 12px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-      }
+      .container { width: min(calc(100% - 32px), var(--max-width)); }
+      body { font-size: 16.5px; }
+      .hero h1 { font-size: 38px; }
+      .hero-text, .about-text, .contact-text { font-size: 17px; }
+      .section-title { font-size: 29px; }
+      .news { grid-template-columns: 1fr; row-gap: 2px; }
+      .news-text { margin-bottom: 14px; }
+      .research-item { grid-template-columns: 42px 1fr; gap: 12px; }
+      .footer-inner { flex-direction: column; }
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
-
   <nav>
-
     <div class="container nav-inner">
-
-      <a
-        href="#top"
-        class="nav-name"
-      >
-        Nabil Walid Rafat
-      </a>
-
+      <a href="#top" class="nav-name">Nabil Walid Rafat</a>
       <div class="nav-links">
-
         <a href="#about">About</a>
-
         <a href="#research">Research</a>
-
-        <a href="#publications">Publications</a>
-
-        <a href="#projects">Projects</a>
-
         <a href="#experience">Experience</a>
-
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-
       </div>
-
     </div>
-
   </nav>
-
 
   <main id="top">
 
-
-    <!-- ===================================================
-         HERO
-    ==================================================== -->
-
     <div class="container">
-
       <div class="hero">
-
         <div class="hero-grid">
 
           <div class="hero-text fade-in">
+            <h1>Nabil Walid Rafat</h1>
+            <div class="hero-role">ML Researcher · LLM Safety · Agentic AI · Multimodal Learning</div>
 
-            <h1>
-              Nabil Walid Rafat
-            </h1>
+            <p>I'm a Computer Science and Engineering graduate from <a href="https://www.bracu.ac.bd/" target="_blank">BRAC University</a>. My research is about making AI systems more reliable, from stopping LLMs from being jailbroken to building agents that know which knowledge source to trust.</p>
 
-            <div class="hero-role">
-              Student Researcher · AI / Machine Learning
-            </div>
+            <p>Right now I'm doing independent research at BRAC University with <strong>Dr. Swakkhar Shatabda</strong> on <strong>CisRAG</strong>, a dynamic routing algorithm for bio-agentic RAG in genomics. I'm also a <strong>Student Researcher at Elite Research Lab</strong>.</p>
 
-            <p>
-              I am a Computer Science and Engineering graduate
-              interested in building reliable and robust AI systems.
-            </p>
-
-            <p>
-              My research interests span
-              <a href="#research">LLM safety</a>,
-              multimodal learning,
-              agentic AI,
-              retrieval-augmented generation,
-              and computational genomics.
-            </p>
-
-            <p>
-              I am currently working as a
-              <strong>Student Researcher at Elite Research Lab</strong>.
-            </p>
+            <p>Before this, I was a research intern at <strong>AMIR Lab</strong> under <strong>Dr. M. Firoz Mridha</strong>, where I built MGQ-Former for remote sensing visual question answering.</p>
 
             <div class="social-links">
-
-              <a
-                href="https://github.com/Nabil0090"
-                target="_blank"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="https://scholar.google.com/"
-                target="_blank"
-              >
-                Google Scholar
-              </a>
-
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="mailto:rafatnabil50@gmail.com"
-              >
-                Email
-              </a>
-
+              <a href="mailto:rafatnabil50@gmail.com">Email</a>
+              <a href="https://github.com/Nabil0090" target="_blank">GitHub</a>
+              <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank">Google Scholar</a>
+              <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
             </div>
-
           </div>
 
-
-          <!--
-            PROFILE PHOTO PLACEHOLDER
-
-            Later, replace this entire div with:
-
-            <img
-              src="profile.jpg"
-              class="profile-photo"
-              alt="Nabil Walid Rafat"
-            >
-          -->
-
-          <div class="profile-placeholder fade-in">
-
-            Profile photo
-
+          <div class="fade-in">
+            <img class="profile-photo" src="profile.jpg" alt="Nabil Walid Rafat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="profile-placeholder">Profile photo</div>
           </div>
 
         </div>
-
       </div>
-
     </div>
 
-
-    <!-- ===================================================
-         ABOUT
-    ==================================================== -->
-
     <section id="about">
-
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          About
-        </h2>
-
-        <div class="fade-in">
-
-          <p>
-            I completed my B.Sc. in Computer Science and Engineering
-            at BRAC University in January 2026.
-          </p>
-
-          <p>
-            My work combines machine learning research with practical
-            AI system development. I am particularly interested in
-            understanding how AI systems can become more robust,
-            reliable, and capable of reasoning across different
-            modalities and domains.
-          </p>
-
-          <p>
-            My current research interests include machine learning,
-            NLP, large language models, LLM safety, multimodal AI,
-            agentic AI, and genomics.
-          </p>
-
+        <h2 class="section-title fade-in">About</h2>
+        <div class="about-text fade-in">
+          <p>My work so far has run along three threads.</p>
+          <p><strong>LLM safety.</strong> My undergraduate thesis with <strong>Dr. Amitabha Chakrabarty</strong> introduced Dynamic Gated Distillation, a dual-teacher method that makes small language models harder to jailbreak without hurting their reasoning. Alongside it, I benchmarked how different LLMs hold up against jailbreak prompts, which became my ICECTE 2026 paper.</p>
+          <p><strong>Multimodal learning.</strong> At AMIR Lab I designed MGQ-Former, a tri-modal fusion model for remote sensing VQA that keeps fine-grained regional detail and reached <strong>78.3%</strong> accuracy on EarthVQA.</p>
+          <p><strong>AI for genomics.</strong> I fine-tuned the Omni-DNA language model for promoter and enhancer classification (over <strong>90%</strong> accuracy), and I'm now building that into CisRAG, an agentic RAG system that reasons directly over raw DNA sequences.</p>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- ===================================================
-         NEWS
-    ==================================================== -->
-
     <section>
-
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          Latest News
-        </h2>
-
+        <h2 class="section-title fade-in">Latest News</h2>
         <div class="news">
 
+          <div class="news-date">2026</div>
+          <div class="news-text fade-in">Joined <strong>Elite Research Lab</strong> as a Student Researcher.</div>
 
-          <div class="news-date">
-            2026
-          </div>
+          <div class="news-date">Sep 2026</div>
+          <div class="news-text fade-in">Started independent research on <strong>CisRAG</strong> at BRAC University with Dr. Swakkhar Shatabda.</div>
 
-          <div class="news-text fade-in">
+          <div class="news-date">Aug 2026</div>
+          <div class="news-text fade-in">Wrapped up my internship at <strong>AMIR Lab</strong>. MGQ-Former reached <strong>78.3%</strong> on EarthVQA.</div>
 
-            Joined
-            <strong>Elite Research Lab</strong>
-            as a Student Researcher.
+          <div class="news-date">2026</div>
+          <div class="news-text fade-in">Paper <strong>Comparative Analysis of LLMs Against Jailbreak Prompts</strong> at ICECTE 2026.</div>
 
-          </div>
+          <div class="news-date">Feb 2026</div>
+          <div class="news-text fade-in">Joined <strong>AMIR Lab</strong> as a remote Research Intern.</div>
 
-
-          <div class="news-date">
-            2026
-          </div>
-
-          <div class="news-text fade-in">
-
-            Developing
-            <strong>CisRAG</strong>,
-            a dynamic routing framework for bio-agentic RAG
-            in genomics.
-
-          </div>
-
-
-          <div class="news-date">
-            Aug 2026
-          </div>
-
-          <div class="news-text fade-in">
-
-            Completed a research internship at
-            <strong>Advanced Machine Intelligence Research Lab
-            (AMIR Lab)</strong>.
-
-          </div>
-
-
-          <div class="news-date">
-            2026
-          </div>
-
-          <div class="news-text fade-in">
-
-            Conference paper
-            <strong>
-              Comparative Analysis of LLMs Against Jailbreak Prompts
-            </strong>
-            published at ICECTE 2026.
-
-          </div>
-
+          <div class="news-date">Jan 2026</div>
+          <div class="news-text fade-in">Graduated with a B.Sc. in Computer Science and Engineering from <strong>BRAC University</strong>.</div>
 
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- ===================================================
-         RESEARCH
-    ==================================================== -->
 
     <section id="research">
-
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          Research Focus
-        </h2>
-
+        <h2 class="section-title fade-in">Research Focus</h2>
         <div class="research-list">
 
-
           <div class="research-item fade-in">
-
-            <div class="research-number">
-              01
-            </div>
-
+            <div class="research-number">01</div>
             <div>
-
-              <h3>
-                LLM Safety
-              </h3>
-
-              <p>
-                Jailbreak robustness, knowledge distillation,
-                post-training methods, and reliable behavior
-                in large language models.
-              </p>
-
+              <h3>LLM Safety &amp; Jailbreak</h3>
+              <p>How LLMs fail under jailbreak prompts, and post-training methods like knowledge distillation that make smaller models robust while keeping their reasoning intact.</p>
             </div>
-
           </div>
 
-
           <div class="research-item fade-in">
-
-            <div class="research-number">
-              02
-            </div>
-
+            <div class="research-number">02</div>
             <div>
-
-              <h3>
-                Multimodal AI
-              </h3>
-
-              <p>
-                Vision-language learning, multimodal fusion,
-                visual question answering, Q-Former architectures,
-                and fine-grained visual reasoning.
-              </p>
-
+              <h3>Agentic AI &amp; RAG</h3>
+              <p>Retrieval systems that route each query to the right source based on what that source can actually do, with reasoning that resists hallucination.</p>
             </div>
-
           </div>
 
-
           <div class="research-item fade-in">
-
-            <div class="research-number">
-              03
-            </div>
-
+            <div class="research-number">03</div>
             <div>
-
-              <h3>
-                Agentic AI & RAG
-              </h3>
-
-              <p>
-                Retrieval-augmented generation, dynamic routing,
-                capability-aware source selection, and
-                hallucination-resistant reasoning.
-              </p>
-
+              <h3>Multimodal Learning</h3>
+              <p>Vision-language fusion and Q-Former style architectures for visual question answering, especially where fine-grained regional detail matters.</p>
             </div>
-
           </div>
 
-
           <div class="research-item fade-in">
-
-            <div class="research-number">
-              04
-            </div>
-
+            <div class="research-number">04</div>
             <div>
-
-              <h3>
-                Genomics & Biological AI
-              </h3>
-
-              <p>
-                Genomic sequence modeling, promoter and enhancer
-                classification, and AI systems for biological
-                sequence reasoning.
-              </p>
-
+              <h3>AI for Genomics</h3>
+              <p>DNA language models for promoter and enhancer classification, and agents that reason over raw genomic sequences.</p>
             </div>
-
           </div>
-
 
         </div>
-
       </div>
-
     </section>
-
-
-    <!-- ===================================================
-         EXPERIENCE
-    ==================================================== -->
 
     <section id="experience">
-
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          Research Experience
-        </h2>
-
+        <h2 class="section-title fade-in">Research Experience</h2>
 
         <div class="experience-item fade-in">
-
-          <div class="experience-date">
-            Present
-          </div>
-
+          <div class="experience-date">2026 – Present</div>
           <div>
-
-            <div class="experience-title">
-              Student Researcher
-            </div>
-
-            <div class="experience-org">
-              Elite Research Lab
-            </div>
-
-            <p class="experience-description">
-              Working on research in artificial intelligence
-              and machine learning.
-            </p>
-
+            <div class="experience-title">Student Researcher</div>
+            <div class="experience-org">Elite Research Lab</div>
+            <p class="experience-description">Working on research in artificial intelligence and machine learning.</p>
           </div>
-
         </div>
 
-
         <div class="experience-item fade-in">
-
-          <div class="experience-date">
-            Sep 2026 – Present
-          </div>
-
+          <div class="experience-date">Sep 2026 – Present</div>
           <div>
-
-            <div class="experience-title">
-              Independent Research
-            </div>
-
-            <div class="experience-org">
-              BRAC University
-            </div>
-
-            <p class="experience-description">
-              Developing CisRAG, a novel dynamic routing algorithm
-              for a bio-agentic RAG system in genomics, with a focus
-              on capability-aware source selection and
-              hallucination-resistant reasoning over raw DNA sequence
-              prompts.
-            </p>
-
+            <div class="experience-title">Independent Research</div>
+            <div class="experience-org">BRAC University <span>· Supervisor: Dr. Swakkhar Shatabda</span></div>
+            <p class="experience-description">Developing <strong>CisRAG</strong>, a novel dynamic routing algorithm for a bio-agentic RAG system in genomics. Designing capability-aware source selection and hallucination-resistant reasoning over raw DNA sequence prompts.</p>
           </div>
-
         </div>
 
-
         <div class="experience-item fade-in">
-
-          <div class="experience-date">
-            Feb 2026 – Aug 2026
-          </div>
-
+          <div class="experience-date">Feb 2026 – Aug 2026</div>
           <div>
-
-            <div class="experience-title">
-              Research Intern
-            </div>
-
-            <div class="experience-org">
-              Advanced Machine Intelligence Research Lab
-            </div>
-
-            <p class="experience-description">
-              Developed MGQ-Former, a tri-modal fusion architecture
-              for remote sensing VQA, combining vision-language
-              representations with a dual-path gated pooling
-              mechanism.
-            </p>
-
+            <div class="experience-title">Research Intern (Remote)</div>
+            <div class="experience-org">AMIR Lab <span>· Supervisor: Dr. M. Firoz Mridha</span></div>
+            <p class="experience-description">Developed <strong>MGQ-Former</strong>, a tri-modal fusion architecture for remote sensing VQA. It combines vision-language representations with a dual-path gated pooling mechanism that preserves fine-grained regional information, achieving <strong>78.3%</strong> accuracy on EarthVQA.</p>
           </div>
-
         </div>
 
-
         <div class="experience-item fade-in">
-
-          <div class="experience-date">
-            2025 – 2026
-          </div>
-
+          <div class="experience-date">2025 – 2026</div>
           <div>
-
-            <div class="experience-title">
-              Undergraduate Thesis
-            </div>
-
-            <div class="experience-org">
-              BRAC University
-            </div>
-
-            <p class="experience-description">
-              Developed Dynamic Gated Distillation, a dual-teacher
-              framework using a harm-score predictive model and
-              knowledge distillation to improve jailbreak robustness
-              while preserving general reasoning in smaller language
-              models.
-            </p>
-
+            <div class="experience-title">Undergraduate Thesis</div>
+            <div class="experience-org">BRAC University <span>· Supervisor: Dr. Amitabha Chakrabarty</span></div>
+            <p class="experience-description"><em>Dynamic Gated Distillation: Dual-Teacher Framework for Jailbreak Prevention in LLMs with Preserved Reasoning.</em> A post-training framework that uses a harm-score predictive model to guide dual-teacher knowledge distillation, improving jailbreak robustness while preserving general reasoning in smaller language models.</p>
           </div>
-
         </div>
 
       </div>
-
     </section>
-
-
-    <!-- ===================================================
-         PUBLICATIONS
-    ==================================================== -->
 
     <section id="publications">
-
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          Publications
-        </h2>
-
-
+        <h2 class="section-title fade-in">Publications</h2>
         <div class="publication fade-in">
-
-          <div class="publication-title">
-
-            <a href="#">
-              Comparative Analysis of LLMs Against Jailbreak Prompts
-            </a>
-
-          </div>
-
-          <div class="publication-authors">
-            Nabil Walid Rafat
-          </div>
-
-          <div class="publication-venue">
-            ICECTE 2026 · Conference Paper
-          </div>
-
+          <div class="publication-title">Comparative Analysis of LLMs Against Jailbreak Prompts</div>
+          <div class="publication-authors"><strong>Nabil Walid Rafat</strong></div>
+          <div class="publication-venue">ICECTE 2026 · Conference Paper</div>
         </div>
-
-
       </div>
-
     </section>
-
-
-    <!-- ===================================================
-         PROJECTS
-    ==================================================== -->
 
     <section id="projects">
-
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          Selected Projects
-        </h2>
-
-
+        <h2 class="section-title fade-in">Selected Projects</h2>
         <div class="projects">
 
-
           <div class="project fade-in">
-
-            <h3>
-              <a href="#">
-                CisRAG
-              </a>
-            </h3>
-
-            <p>
-              Dynamic routing for bio-agentic RAG and reasoning
-              over genomic sequence prompts.
-            </p>
-
+            <h3><a href="https://github.com/Nabil0090/HR_Policy_bot_with_RAG" target="_blank">HR Policy RAG Chatbot</a></h3>
+            <p>A deployed RAG chatbot that answers employee HR policy questions. Users can upload their own documents, and each query is routed between those files and the central policy knowledge base.</p>
+            <div class="tags"><span>RAG</span><span>FastAPI</span><span>Streamlit</span></div>
           </div>
 
-
           <div class="project fade-in">
-
-            <h3>
-              <a href="#">
-                MGQ-Former
-              </a>
-            </h3>
-
-            <p>
-              Tri-modal fusion architecture for remote sensing
-              visual question answering.
-            </p>
-
+            <h3>Omni-DNA Fine-tuning</h3>
+            <p>Fine-tuned the Omni-DNA genomic LLM on human promoter and enhancer data. Training on the merged dataset avoided overfitting to one task and reached over 90% accuracy.</p>
+            <div class="tags"><span>Genomics</span><span>LLM Fine-tuning</span></div>
           </div>
 
-
           <div class="project fade-in">
-
-            <h3>
-              <a href="#">
-                Dynamic Gated Distillation
-              </a>
-            </h3>
-
-            <p>
-              Dual-teacher knowledge distillation framework for
-              improving jailbreak robustness in smaller language
-              models.
-            </p>
-
+            <h3>Amazon Stock Forecasting</h3>
+            <p>LSTM and statistical time-series models trained on five years of Amazon stock data, deployed with a Gradio interface on Hugging Face.</p>
+            <div class="tags"><span>LSTM</span><span>Time Series</span><span>Gradio</span></div>
           </div>
 
-
           <div class="project fade-in">
-
-            <h3>
-              <a href="#">
-                HR Policy RAG Chatbot
-              </a>
-            </h3>
-
-            <p>
-              RAG chatbot with document upload, dynamic routing,
-              retrieval, and generation.
-            </p>
-
+            <h3>Question Answer Classification</h3>
+            <p>Machine learning and neural network models for classifying question-answer pairs.</p>
+            <div class="tags"><span>ML</span><span>Neural Networks</span></div>
           </div>
 
-
           <div class="project fade-in">
-
-            <h3>
-              <a href="#">
-                Omni DNA Fine-tuning
-              </a>
-            </h3>
-
-            <p>
-              Fine-tuned Omni DNA for human promoter and enhancer
-              sequence classification.
-            </p>
-
+            <h3>Food Ordering Application</h3>
+            <p>A full-stack food ordering app built for the System Design course (CSE471).</p>
+            <div class="tags"><span>MERN Stack</span></div>
           </div>
 
+        </div>
+        <p class="more-link fade-in"><a href="https://github.com/Nabil0090" target="_blank">More on GitHub →</a></p>
+      </div>
+    </section>
 
-          <div class="project fade-in">
+    <section>
+      <div class="container">
+        <h2 class="section-title fade-in">Education</h2>
 
-            <h3>
-              Amazon Stock Forecasting
-            </h3>
+        <div class="education-item fade-in">
+          <div class="education-degree">B.Sc. in Computer Science and Engineering</div>
+          <div class="education-school">BRAC University · Dhaka, Bangladesh</div>
+          <div class="education-details">Jan 2022 – Jan 2026 · CGPA 3.21 / 4.00</div>
+        </div>
 
-            <p>
-              LSTM and statistical time-series modeling using
-              historical Amazon data.
-            </p>
+        <div class="education-item fade-in">
+          <div class="education-degree">Higher Secondary Certificate</div>
+          <div class="education-school">Dhaka College · Dhaka, Bangladesh</div>
+          <div class="education-details">2020 · Science · GPA 5.00</div>
+        </div>
 
-          </div>
-
-
-          <div class="project fade-in">
-
-            <h3>
-              Question Answer Classification
-            </h3>
-
-            <p>
-              Machine learning and neural network models for
-              question-answer classification.
-            </p>
-
-          </div>
-
-
-          <div class="project fade-in">
-
-            <h3>
-              Food Ordering Application
-            </h3>
-
-            <p>
-              MERN-stack food ordering application developed
-              as a system design project.
-            </p>
-
-          </div>
-
-
+        <div class="education-item fade-in">
+          <div class="education-degree">Secondary School Certificate</div>
+          <div class="education-school">Ideal School and College · Dhaka, Bangladesh</div>
+          <div class="education-details">2018 · GPA 5.00</div>
         </div>
 
       </div>
-
     </section>
 
-
-    <!-- ===================================================
-         EDUCATION
-    ==================================================== -->
-
     <section>
-
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          Education
-        </h2>
-
-
-        <div class="education-item fade-in">
-
-          <div class="education-degree">
-            B.Sc. in Computer Science and Engineering
-          </div>
-
-          <div class="education-school">
-            BRAC University · Dhaka, Bangladesh
-          </div>
-
-          <div class="education-details">
-            Jan 2022 – Jan 2026 · CGPA: 3.21 / 4.00
-          </div>
-
-        </div>
-
-
-        <div class="education-item fade-in">
-
-          <div class="education-degree">
-            Higher Secondary Certificate
-          </div>
-
-          <div class="education-school">
-            Dhaka College · Dhaka, Bangladesh
-          </div>
-
-          <div class="education-details">
-            2020 · GPA: 5.00 · Science
-          </div>
-
-        </div>
-
-
-        <div class="education-item fade-in">
-
-          <div class="education-degree">
-            Secondary School Certificate
-          </div>
-
-          <div class="education-school">
-            Ideal School and College · Dhaka, Bangladesh
-          </div>
-
-          <div class="education-details">
-            2018 · GPA: 5.00
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         SKILLS
-    ==================================================== -->
-
-    <section>
-
-      <div class="container">
-
-        <h2 class="section-title fade-in">
-          Technical Skills
-        </h2>
-
-
+        <h2 class="section-title fade-in">Technical Skills</h2>
         <div class="skills">
 
-
           <div class="skill-category fade-in">
-
-            <strong>
-              Programming & Data Science:
-            </strong>
-
-            <span>
-              Python, PyTorch, Scikit-Learn, C, SQL, FAISS
-            </span>
-
+            <strong>Programming &amp; Data Science</strong>
+            <span>Python, PyTorch, Scikit-Learn, C, SQL, FAISS</span>
           </div>
 
-
           <div class="skill-category fade-in">
-
-            <strong>
-              Machine Learning & AI:
-            </strong>
-
-            <span>
-              Image Processing, LLM Fine-tuning,
-              LLM Benchmarking
-            </span>
-
+            <strong>Machine Learning &amp; AI</strong>
+            <span>LLM Fine-tuning, Jailbreaking in LLMs, Benchmarking, Image Processing</span>
           </div>
 
-
           <div class="skill-category fade-in">
-
-            <strong>
-              Bioinformatics & Genomics:
-            </strong>
-
-            <span>
-              FASTA, FASTQ, scRNA-seq, Gene Expression,
-              Alignment, Clustering, PCA
-            </span>
-
+            <strong>Advanced Modeling</strong>
+            <span>Knowledge Distillation, Multimodal Fusion, Q-Former, Agentic RAG</span>
           </div>
 
-
           <div class="skill-category fade-in">
-
-            <strong>
-              Advanced Modeling:
-            </strong>
-
-            <span>
-              Knowledge Distillation, Multimodal Fusion,
-              Q-Former, Agentic RAG
-            </span>
-
+            <strong>Bioinformatics &amp; Genomics</strong>
+            <span>FASTA, FASTQ, scRNA-seq, Gene Expression, Alignment, Clustering, PCA</span>
           </div>
 
-
           <div class="skill-category fade-in">
-
-            <strong>
-              Web Development:
-            </strong>
-
-            <span>
-              MongoDB, Express.js, React, Node.js
-            </span>
-
+            <strong>Web Development</strong>
+            <span>MongoDB, Express.js, React, Node.js</span>
           </div>
 
-
           <div class="skill-category fade-in">
-
-            <strong>
-              Tools & Systems:
-            </strong>
-
-            <span>
-              Linux, Shell Scripting, Bash, Git, GitHub
-            </span>
-
+            <strong>Tools &amp; Systems</strong>
+            <span>Linux, Shell Scripting, Bash, Git, GitHub</span>
           </div>
 
+          <div class="skill-category fade-in">
+            <strong>Languages</strong>
+            <span>English (IELTS 7.0), Bengali (Native)</span>
+          </div>
 
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- ===================================================
-         CONTACT
-    ==================================================== -->
-
-    <section id="contact">
-
+    <section id="contact" class="contact">
       <div class="container">
-
-        <h2 class="section-title fade-in">
-          Contact
-        </h2>
-
+        <h2 class="section-title fade-in">Contact</h2>
         <div class="contact-text fade-in">
-
+          <p>I'm open to research collaborations, graduate research opportunities, and conversations about LLM safety, agentic AI, and AI for biology.</p>
+          <p>Email: <a href="mailto:rafatnabil50@gmail.com">rafatnabil50@gmail.com</a></p>
           <p>
-            I am interested in research collaborations,
-            graduate research opportunities, and discussions
-            around machine learning and artificial intelligence.
-          </p>
-
-          <p>
-            Email:
-            <a href="mailto:rafatnabil50@gmail.com">
-              rafatnabil50@gmail.com
-            </a>
-          </p>
-
-          <p>
-
-            <a
-              href="https://github.com/Nabil0090"
-              target="_blank"
-            >
-              GitHub
-            </a>
-
+            <a href="https://github.com/Nabil0090" target="_blank">GitHub</a>
             &nbsp;·&nbsp;
-
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-
+            <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
             &nbsp;·&nbsp;
-
-            <a
-              href="https://scholar.google.com/"
-              target="_blank"
-            >
-              Google Scholar
-            </a>
-
+            <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank">Google Scholar</a>
           </p>
-
         </div>
-
       </div>
-
     </section>
-
 
   </main>
 
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
   <footer>
-
     <div class="container footer-inner">
-
-      <span>
-        © 2026 Nabil Walid Rafat
-      </span>
-
-      <span>
-        Last updated October 2026
-      </span>
-
+      <span>© 2026 Nabil Walid Rafat</span>
+      <span>Last updated October 2026</span>
     </div>
-
   </footer>
 
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
   <script>
-
-    /*
-      Subtle scroll reveal.
-      This is intentionally restrained so the site
-      still feels like an academic homepage.
-    */
-
-    const elements =
-      document.querySelectorAll(".fade-in");
-
-    const observer =
-      new IntersectionObserver(
-        (entries) => {
-
-          entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add("visible");
-
-              observer.unobserve(entry.target);
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.08
+    const elements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
-      );
-
-
-    elements.forEach((element) => {
-
-      observer.observe(element);
-
-    });
-
+      });
+    }, { threshold: 0.08 });
+    elements.forEach((el) => observer.observe(el));
   </script>
-
 
 </body>
 </html>
