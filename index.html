@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nabil Walid Rafat</title>
-  <meta name="description" content="Nabil Walid Rafat — ML researcher working on LLM safety, agentic RAG for genomics, and multimodal learning.">
+  <meta name="description" content="Nabil Walid Rafat — ML researcher working on LLM safety, agentic AI, and multimodal learning.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --background: #ffffff;
-      --text: #1d1d1f;
-      --secondary: #1d1d1f;
-      --light: #1d1d1f;
-      --border: #e6e6e6;
-      --blue: #2457a6;
-      --blue-hover: #173f7a;
-      --blue-soft: #eef3fb;
+      --bg: #ffffff;
+      --bg-subtle: #f6f8fb;
+      --navy: #13294b;
+      --text: #1d1f23;
+      --blue: #1a5ba8;
+      --blue-hover: #123f78;
+      --blue-soft: #e8eef6;
+      --accent: #c1440e;
+      --border: #e3e7ee;
       --max-width: 960px;
-      --serif: "Fraunces", Georgia, serif;
+      --serif: "Source Serif 4", Georgia, serif;
       --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
-      --mono: "JetBrains Mono", Consolas, monospace;
     }
 
     * { box-sizing: border-box; }
@@ -29,18 +29,20 @@
 
     body {
       margin: 0;
-      background: var(--background);
+      background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
-      font-size: 17.5px;
+      font-size: 17px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { color: var(--blue-hover); text-decoration: underline; }
+    a { color: var(--blue); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--blue-hover); }
     p { margin-top: 0; }
-    strong { font-weight: 600; color: var(--text); }
+    strong { font-weight: 600; color: var(--navy); }
+
+    .icon { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
 
     .container {
       width: min(calc(100% - 48px), var(--max-width));
@@ -51,215 +53,203 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      padding: 20px 0;
       background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(8px);
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 24px;
     }
 
     .nav-name {
       font-family: var(--serif);
       font-size: 21px;
-      font-weight: 600;
-      color: var(--text);
+      font-weight: 700;
+      color: var(--navy);
     }
 
-    .nav-name:hover { text-decoration: none; color: var(--text); }
+    .nav-name:hover { color: var(--navy); }
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 24px;
-      font-size: 15.5px;
+    .nav-links { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    .nav-links a {
+      font-size: 15px;
       font-weight: 500;
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color .2s, color .2s;
     }
 
-    .nav-links a { color: var(--secondary); }
-    .nav-links a:hover { color: var(--blue); text-decoration: none; }
+    .nav-links a:hover { background: var(--blue-soft); color: var(--navy); }
 
     .hero { padding: 80px 0 72px; }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 210px;
+      grid-template-columns: 1fr 220px;
       gap: 64px;
-      align-items: start;
+      align-items: center;
     }
 
     .hero h1 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-family: var(--serif);
-      font-size: 58px;
-      line-height: 1.08;
-      font-weight: 500;
-      letter-spacing: -1.2px;
+      font-size: 54px;
+      line-height: 1.1;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.8px;
     }
 
     .hero-role {
-      margin-bottom: 28px;
+      margin-bottom: 26px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--blue);
-      font-family: var(--mono);
-      font-size: 14.5px;
-      letter-spacing: 0.2px;
     }
 
-    .hero-text {
-      color: var(--text);
-      font-size: 18.5px;
-      max-width: 660px;
-    }
-
-    .hero-text p { margin-bottom: 18px; }
+    .hero-text { font-size: 18.5px; max-width: 640px; }
+    .hero-text p { margin-bottom: 16px; }
 
     .profile-photo,
     .profile-placeholder {
-      width: 210px;
-      height: 252px;
-      border-radius: 10px;
+      width: 220px;
+      height: 264px;
+      border-radius: 12px;
       border: 1px solid var(--border);
     }
 
     .profile-photo {
       object-fit: cover;
-      box-shadow: 0 10px 30px rgba(20, 40, 80, 0.10);
+      box-shadow: 0 12px 32px rgba(19, 41, 75, 0.14);
     }
 
     .profile-placeholder {
       display: none;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #f8f8f8, #eeeeee);
-      color: #999999;
+      background: var(--bg-subtle);
+      color: var(--navy);
       font-size: 13px;
     }
 
-    .social-links {
-      margin-top: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .social-links { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
 
     .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: 14.5px;
       font-weight: 500;
-      padding: 6px 16px;
+      padding: 7px 16px;
       border: 1px solid var(--border);
       border-radius: 50px;
-      color: var(--text);
-      transition: border-color .2s, color .2s, background-color .2s;
+      color: var(--navy);
+      transition: background-color .2s, border-color .2s, color .2s;
     }
 
-    .social-links a:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      background: var(--blue-soft);
-      text-decoration: none;
-    }
+    .social-links a:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .social-links .icon { width: 16px; height: 16px; }
 
-    section {
-      padding: 64px 0;
-      border-top: 1px solid var(--border);
-    }
+    section { padding: 64px 0; border-top: 1px solid var(--border); }
+    section.tinted { background: var(--bg-subtle); }
 
     .section-title {
-      margin: 0 0 34px;
+      margin: 0 0 36px;
       font-family: var(--serif);
-      font-size: 34px;
-      font-weight: 500;
-      letter-spacing: -0.5px;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.3px;
     }
 
-    .about-text { max-width: 760px; font-size: 18px; color: var(--text); }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 3px;
+      margin-top: 12px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .about-text { max-width: 760px; font-size: 18px; }
     .about-text p { margin-bottom: 18px; }
 
-    .news {
+    .news { list-style: none; margin: 0; padding: 0; }
+
+    .news li {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      row-gap: 18px;
-      font-size: 17px;
+      grid-template-columns: 110px 1fr;
+      gap: 20px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 16.5px;
     }
 
-    .news-date {
-      color: var(--light);
-      font-family: var(--mono);
-      font-size: 13.5px;
-      padding-top: 4px;
+    .news li:last-child { border-bottom: none; }
+
+    .date {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
     }
 
-    .news-text { color: var(--text); }
-
-    .research-list {
-      display: flex;
-      flex-direction: column;
-      gap: 34px;
-    }
+    .research-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
     .research-item {
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 20px;
+      padding: 24px 26px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
     }
 
-    .research-number {
-      color: var(--blue);
-      font-family: var(--mono);
-      font-size: 15px;
-      font-weight: 500;
-      padding-top: 6px;
-    }
+    .research-number { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; }
 
     .research-item h3 {
-      margin: 0 0 6px;
+      margin: 6px 0 8px;
       font-family: var(--serif);
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
     }
 
-    .research-item p { margin: 0; color: var(--secondary); font-size: 17px; }
+    .research-item p { margin: 0; font-size: 16px; }
 
     .experience-item {
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 170px 1fr;
       gap: 32px;
       padding: 28px 0;
       border-bottom: 1px solid var(--border);
     }
 
     .experience-item:first-of-type { padding-top: 0; }
+    .experience-item:last-of-type { border-bottom: none; padding-bottom: 0; }
 
-    .experience-date {
-      color: var(--light);
-      font-family: var(--mono);
-      font-size: 13.5px;
-      padding-top: 5px;
-    }
-
-    .experience-title {
-      margin-bottom: 2px;
+    .item-title {
       font-family: var(--serif);
-      font-size: 23px;
-      font-weight: 500;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
     }
 
-    .experience-org {
-      color: var(--blue);
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
+    .item-org { color: var(--blue); font-size: 16px; font-weight: 500; margin: 2px 0 10px; }
+    .item-org span { color: var(--text); font-weight: 400; }
 
-    .experience-org span { color: var(--text); font-weight: 400; }
-
-    .sup, .experience-org span.sup {
+    .sup, .item-org span.sup {
       color: var(--blue);
       font-weight: 600;
       background: var(--blue-soft);
@@ -268,144 +258,183 @@
       white-space: nowrap;
     }
 
-    .experience-description { margin: 0; color: var(--secondary); font-size: 17px; }
-    .experience-description em { color: var(--text); }
+    .item-desc { margin: 0; font-size: 16.5px; }
+    .item-desc em { color: var(--navy); }
 
-    .publication { margin-bottom: 32px; }
+    .publication { display: flex; gap: 20px; align-items: flex-start; }
+
+    .venue {
+      flex: 0 0 auto;
+      min-width: 84px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: var(--navy);
+      color: #fff;
+    }
 
     .publication-title {
       font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 6px;
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 4px;
     }
 
-    .publication-authors { color: var(--secondary); font-size: 16px; }
+    .publication-authors { font-size: 16px; }
     .publication-authors strong { color: var(--blue); }
+    .publication-venue { font-size: 15px; font-style: italic; margin-top: 2px; }
 
-    .publication-venue {
-      margin-top: 4px;
-      color: var(--light);
-      font-family: var(--mono);
-      font-size: 13.5px;
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      padding: 22px 24px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color .2s, box-shadow .2s;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 48px;
-      row-gap: 34px;
-    }
+    .project:hover { border-color: #c9d4e4; box-shadow: 0 6px 20px rgba(19, 41, 75, 0.07); }
 
-    .project { padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+    .project-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
 
     .project h3 {
-      margin: 0 0 6px;
+      margin: 0;
       font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 500;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.35;
     }
 
-    .project p { margin: 0 0 10px; color: var(--secondary); font-size: 16.5px; }
+    .project h3 a { color: var(--navy); }
+    .project h3 a:hover { color: var(--blue); }
+
+    .gh {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      transition: background-color .2s, color .2s, border-color .2s;
+    }
+
+    .gh:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+    .project p { margin: 0 0 14px; font-size: 15.5px; flex: 1; }
 
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
     .tags span {
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 2px 9px;
-      border-radius: 4px;
-      background: var(--blue-soft);
-      color: var(--blue);
-    }
-
-    .more-link { margin-top: 30px; font-size: 16px; font-weight: 500; }
-
-    .education-item { margin-bottom: 30px; }
-    .education-item:last-child { margin-bottom: 0; }
-
-    .education-degree {
-      font-family: var(--serif);
-      font-size: 23px;
+      font-size: 12.5px;
       font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 50px;
+      background: var(--blue-soft);
+      color: var(--navy);
     }
 
-    .education-school { color: var(--blue); font-size: 16.5px; font-weight: 500; }
-
-    .education-details {
-      color: var(--light);
-      font-family: var(--mono);
-      font-size: 13.5px;
-      margin-top: 2px;
+    .more-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      font-size: 15.5px;
+      font-weight: 600;
     }
 
-    .skills {
+    .education-item {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px 48px;
+      grid-template-columns: 170px 1fr;
+      gap: 32px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .skill-category { font-size: 16.5px; }
+    .education-item:first-of-type { padding-top: 0; }
+    .education-item:last-of-type { border-bottom: none; padding-bottom: 0; }
+    .education-details { font-size: 15.5px; }
 
-    .skill-category strong {
-      display: block;
+    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 48px; }
+
+    .skill-category h3 {
+      margin: 0 0 4px;
       font-family: var(--serif);
       font-size: 19px;
-      font-weight: 500;
-      margin-bottom: 2px;
+      font-weight: 600;
+      color: var(--navy);
     }
 
-    .skill-category span { color: var(--secondary); }
+    .skill-category p { margin: 0; font-size: 16px; }
 
-    .contact { padding-bottom: 90px; }
-    .contact-text { max-width: 640px; color: var(--secondary); font-size: 18px; }
+    .contact-text { max-width: 640px; font-size: 18px; }
 
     footer {
-      border-top: 1px solid var(--border);
-      padding: 26px 0 36px;
-      color: var(--light);
-      font-family: var(--mono);
-      font-size: 12.5px;
+      background: var(--navy);
+      color: #c3cbdb;
+      padding: 26px 0;
+      font-size: 14px;
     }
 
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
+    .fade-in { opacity: 0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 750px) {
-      .nav-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
-      .nav-links { justify-content: flex-start; gap: 16px; font-size: 15px; }
+    @media (max-width: 760px) {
       nav { position: static; }
-      .hero { padding-top: 50px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .nav-inner { height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 6px; }
+      .nav-links { margin-left: -12px; }
+      .hero { padding: 48px 0 56px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
       .hero-grid > :last-child { order: -1; }
       .profile-photo, .profile-placeholder { width: 160px; height: 192px; }
-      .hero h1 { font-size: 44px; }
-      .experience-item { grid-template-columns: 1fr; gap: 6px; }
-      .projects, .skills { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 42px; }
+      .research-list, .projects, .skills { grid-template-columns: 1fr; }
+      .experience-item, .education-item { grid-template-columns: 1fr; gap: 4px; }
     }
 
     @media (max-width: 500px) {
       .container { width: min(calc(100% - 32px), var(--max-width)); }
-      body { font-size: 16.5px; }
-      .hero h1 { font-size: 38px; }
-      .hero-text, .about-text, .contact-text { font-size: 17px; }
-      .section-title { font-size: 29px; }
-      .news { grid-template-columns: 1fr; row-gap: 2px; }
-      .news-text { margin-bottom: 14px; }
-      .research-item { grid-template-columns: 42px 1fr; gap: 12px; }
-      .footer-inner { flex-direction: column; }
+      body { font-size: 16px; }
+      .hero h1 { font-size: 36px; }
+      .hero-text, .about-text, .contact-text { font-size: 16.5px; }
+      .section-title { font-size: 28px; }
+      .news li { grid-template-columns: 1fr; gap: 2px; }
+      .publication { flex-direction: column; gap: 10px; }
+      .footer-inner { flex-direction: column; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-in { opacity: 1; transform: none; transition: none; }
     }
   </style>
 </head>
 
 <body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 2 1 8.5l4 2.34V17l7 4 7-4v-6.16l2-1.17V15h1.2V8.5L12 2Zm6.1 6.5L12 12.1 5.9 8.5 12 4.9l6.1 3.6ZM17 15.6l-5 2.86-5-2.86v-3.42l5 2.93 5-2.93v3.42Z"/></symbol>
+    <symbol id="i-email" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.4l8 5.2 8-5.2V6H4Zm16 2.8-7.46 4.85a1 1 0 0 1-1.08 0L4 8.8V18h16V8.8Z"/></symbol>
+  </svg>
 
   <nav>
     <div class="container nav-inner">
@@ -436,10 +465,10 @@
             <p>I'm currently a <strong>Research Intern at Elite Research Lab</strong> and an <strong>Independent Researcher at BRAC University</strong>.</p>
 
             <div class="social-links">
-              <a href="mailto:rafatnabil50@gmail.com">Email</a>
-              <a href="https://github.com/Nabil0090" target="_blank">GitHub</a>
-              <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank">Google Scholar</a>
-              <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+              <a href="mailto:rafatnabil50@gmail.com"><svg class="icon"><use href="#i-email"/></svg>Email</a>
+              <a href="https://github.com/Nabil0090" target="_blank"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+              <a href="https://scholar.google.com/citations?user=a8mQXkAAAAAJ&hl=en" target="_blank"><svg class="icon"><use href="#i-scholar"/></svg>Google Scholar</a>
+              <a href="https://www.linkedin.com/in/nabil-walid-rafat-1920362b8/" target="_blank"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
             </div>
           </div>
 
@@ -465,30 +494,17 @@
       </div>
     </section>
 
-    <section>
+    <section class="tinted">
       <div class="container">
         <h2 class="section-title fade-in">Latest News</h2>
-        <div class="news">
-
-          <div class="news-date">2026</div>
-          <div class="news-text fade-in">Joined <strong>Elite Research Lab</strong> as a Research Intern.</div>
-
-          <div class="news-date">Sep 2026</div>
-          <div class="news-text fade-in">Started independent research on <strong>CisRAG</strong> at BRAC University with <span class="sup">Dr. Swakkhar Shatabda</span>.</div>
-
-          <div class="news-date">Aug 2026</div>
-          <div class="news-text fade-in">Wrapped up my internship at <strong>AMIR Lab</strong>. MGQ-Former reached <strong>78.3%</strong> on EarthVQA.</div>
-
-          <div class="news-date">2026</div>
-          <div class="news-text fade-in">Paper <strong>Comparative Analysis of LLMs Against Jailbreak Prompts</strong> at ICECTE 2026.</div>
-
-          <div class="news-date">Feb 2026</div>
-          <div class="news-text fade-in">Joined <strong>AMIR Lab</strong> as a remote Research Intern.</div>
-
-          <div class="news-date">Jan 2026</div>
-          <div class="news-text fade-in">Graduated with a B.Sc. in Computer Science and Engineering from <strong>BRAC University</strong>.</div>
-
-        </div>
+        <ul class="news fade-in">
+          <li><span class="date">2026</span><span>Joined <strong>Elite Research Lab</strong> as a Research Intern.</span></li>
+          <li><span class="date">Sep 2026</span><span>Started independent research on <strong>CisRAG</strong> at BRAC University with <span class="sup">Dr. Swakkhar Shatabda</span>.</span></li>
+          <li><span class="date">Aug 2026</span><span>Wrapped up my internship at <strong>AMIR Lab</strong>. MGQ-Former reached <strong>78.3%</strong> on EarthVQA.</span></li>
+          <li><span class="date">2026</span><span>Paper <strong>Comparative Analysis of LLMs Against Jailbreak Prompts</strong> at ICECTE 2026.</span></li>
+          <li><span class="date">Feb 2026</span><span>Joined <strong>AMIR Lab</strong> as a remote Research Intern.</span></li>
+          <li><span class="date">Jan 2026</span><span>Graduated with a B.Sc. in Computer Science and Engineering from <strong>BRAC University</strong>.</span></li>
+        </ul>
       </div>
     </section>
 
@@ -499,34 +515,26 @@
 
           <div class="research-item fade-in">
             <div class="research-number">01</div>
-            <div>
-              <h3>LLM Safety &amp; Jailbreak</h3>
-              <p>How LLMs fail under jailbreak prompts, and post-training methods like knowledge distillation that make smaller models robust while keeping their reasoning intact.</p>
-            </div>
+            <h3>LLM Safety &amp; Jailbreak</h3>
+            <p>How LLMs fail under jailbreak prompts, and post-training methods like knowledge distillation that make smaller models robust while keeping their reasoning intact.</p>
           </div>
 
           <div class="research-item fade-in">
             <div class="research-number">02</div>
-            <div>
-              <h3>Agentic AI &amp; RAG</h3>
-              <p>Retrieval systems that route each query to the right source based on what that source can actually do, with reasoning that resists hallucination.</p>
-            </div>
+            <h3>Agentic AI &amp; RAG</h3>
+            <p>Retrieval systems that route each query to the right source based on what that source can actually do, with reasoning that resists hallucination.</p>
           </div>
 
           <div class="research-item fade-in">
             <div class="research-number">03</div>
-            <div>
-              <h3>Multimodal Learning</h3>
-              <p>Vision-language fusion and Q-Former style architectures for visual question answering, especially where fine-grained regional detail matters.</p>
-            </div>
+            <h3>Multimodal Learning</h3>
+            <p>Vision-language fusion and Q-Former style architectures for visual question answering, especially where fine-grained regional detail matters.</p>
           </div>
 
           <div class="research-item fade-in">
             <div class="research-number">04</div>
-            <div>
-              <h3>AI for Genomics</h3>
-              <p>DNA language models for promoter and enhancer classification, and agents that reason over raw genomic sequences.</p>
-            </div>
+            <h3>AI for Genomics</h3>
+            <p>DNA language models for promoter and enhancer classification, and agents that reason over raw genomic sequences.</p>
           </div>
 
         </div>
@@ -538,51 +546,54 @@
         <h2 class="section-title fade-in">Research Experience</h2>
 
         <div class="experience-item fade-in">
-          <div class="experience-date">2026 – Present</div>
+          <div class="date">2026 – Present</div>
           <div>
-            <div class="experience-title">Research Intern</div>
-            <div class="experience-org">Elite Research Lab</div>
-            <p class="experience-description">Working on research in artificial intelligence and machine learning.</p>
+            <div class="item-title">Research Intern</div>
+            <div class="item-org">Elite Research Lab</div>
+            <p class="item-desc">Working on research in artificial intelligence and machine learning.</p>
           </div>
         </div>
 
         <div class="experience-item fade-in">
-          <div class="experience-date">Sep 2026 – Present</div>
+          <div class="date">Sep 2026 – Present</div>
           <div>
-            <div class="experience-title">Independent Research</div>
-            <div class="experience-org">BRAC University <span>· Supervisor: <span class="sup">Dr. Swakkhar Shatabda</span></span></div>
-            <p class="experience-description">Developing <strong>CisRAG</strong>, a novel dynamic routing algorithm for a bio-agentic RAG system in genomics. Designing capability-aware source selection and hallucination-resistant reasoning over raw DNA sequence prompts.</p>
+            <div class="item-title">Independent Research</div>
+            <div class="item-org">BRAC University <span>· Supervisor: <span class="sup">Dr. Swakkhar Shatabda</span></span></div>
+            <p class="item-desc">Developing <strong>CisRAG</strong>, a novel dynamic routing algorithm for a bio-agentic RAG system in genomics. Designing capability-aware source selection and hallucination-resistant reasoning over raw DNA sequence prompts.</p>
           </div>
         </div>
 
         <div class="experience-item fade-in">
-          <div class="experience-date">Feb 2026 – Aug 2026</div>
+          <div class="date">Feb 2026 – Aug 2026</div>
           <div>
-            <div class="experience-title">Research Intern (Remote)</div>
-            <div class="experience-org">AMIR Lab <span>· Supervisor: <span class="sup">Dr. M. Firoz Mridha</span></span></div>
-            <p class="experience-description">Developed <strong>MGQ-Former</strong>, a tri-modal fusion architecture for remote sensing VQA. It combines vision-language representations with a dual-path gated pooling mechanism that preserves fine-grained regional information, achieving <strong>78.3%</strong> accuracy on EarthVQA.</p>
+            <div class="item-title">Research Intern (Remote)</div>
+            <div class="item-org">AMIR Lab <span>· Supervisor: <span class="sup">Dr. M. Firoz Mridha</span></span></div>
+            <p class="item-desc">Developed <strong>MGQ-Former</strong>, a tri-modal fusion architecture for remote sensing VQA. It combines vision-language representations with a dual-path gated pooling mechanism that preserves fine-grained regional information, achieving <strong>78.3%</strong> accuracy on EarthVQA.</p>
           </div>
         </div>
 
         <div class="experience-item fade-in">
-          <div class="experience-date">2025 – 2026</div>
+          <div class="date">2025 – 2026</div>
           <div>
-            <div class="experience-title">Undergraduate Thesis</div>
-            <div class="experience-org">BRAC University <span>· Supervisor: <span class="sup">Dr. Amitabha Chakrabarty</span></span></div>
-            <p class="experience-description"><em>Dynamic Gated Distillation: Dual-Teacher Framework for Jailbreak Prevention in LLMs with Preserved Reasoning.</em> A post-training framework that uses a harm-score predictive model to guide dual-teacher knowledge distillation, improving jailbreak robustness while preserving general reasoning in smaller language models.</p>
+            <div class="item-title">Undergraduate Thesis</div>
+            <div class="item-org">BRAC University <span>· Supervisor: <span class="sup">Dr. Amitabha Chakrabarty</span></span></div>
+            <p class="item-desc"><em>Dynamic Gated Distillation: Dual-Teacher Framework for Jailbreak Prevention in LLMs with Preserved Reasoning.</em> A post-training framework that uses a harm-score predictive model to guide dual-teacher knowledge distillation, improving jailbreak robustness while preserving general reasoning in smaller language models.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <section id="publications">
+    <section id="publications" class="tinted">
       <div class="container">
         <h2 class="section-title fade-in">Publications</h2>
         <div class="publication fade-in">
-          <div class="publication-title">Comparative Analysis of LLMs Against Jailbreak Prompts</div>
-          <div class="publication-authors"><strong>Nabil Walid Rafat</strong></div>
-          <div class="publication-venue">ICECTE 2026 · Conference Paper</div>
+          <span class="venue">ICECTE</span>
+          <div>
+            <div class="publication-title">Comparative Analysis of LLMs Against Jailbreak Prompts</div>
+            <div class="publication-authors"><strong>Nabil Walid Rafat</strong></div>
+            <div class="publication-venue">ICECTE 2026 · Conference Paper</div>
+          </div>
         </div>
       </div>
     </section>
@@ -593,60 +604,84 @@
         <div class="projects">
 
           <div class="project fade-in">
-            <h3><a href="https://github.com/Nabil0090/HR_Policy_bot_with_RAG" target="_blank">HR Policy RAG Chatbot</a></h3>
+            <div class="project-head">
+              <h3><a href="https://github.com/Nabil0090/HR_Policy_bot_with_RAG" target="_blank">HR Policy RAG Chatbot</a></h3>
+              <a class="gh" href="https://github.com/Nabil0090/HR_Policy_bot_with_RAG" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
+            </div>
             <p>A deployed RAG chatbot that answers employee HR policy questions. Users can upload their own documents, and each query is routed between those files and the central policy knowledge base.</p>
             <div class="tags"><span>RAG</span><span>FastAPI</span><span>Streamlit</span></div>
           </div>
 
           <div class="project fade-in">
-            <h3>Omni-DNA Fine-tuning</h3>
+            <div class="project-head">
+              <h3><a href="https://github.com/Nabil0090/CSE_443_Bioinformatics" target="_blank">Omni-DNA Fine-tuning</a></h3>
+              <a class="gh" href="https://github.com/Nabil0090/CSE_443_Bioinformatics" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
+            </div>
             <p>Fine-tuned the Omni-DNA genomic LLM on human promoter and enhancer data. Training on the merged dataset avoided overfitting to one task and reached over 90% accuracy.</p>
             <div class="tags"><span>Genomics</span><span>LLM Fine-tuning</span></div>
           </div>
 
           <div class="project fade-in">
-            <h3>Amazon Stock Forecasting</h3>
+            <div class="project-head">
+              <h3><a href="https://github.com/Nabil0090/stock-prices-forecasting-amazon" target="_blank">Amazon Stock Forecasting</a></h3>
+              <a class="gh" href="https://github.com/Nabil0090/stock-prices-forecasting-amazon" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
+            </div>
             <p>LSTM and statistical time-series models trained on five years of Amazon stock data, deployed with a Gradio interface on Hugging Face.</p>
             <div class="tags"><span>LSTM</span><span>Time Series</span><span>Gradio</span></div>
           </div>
 
           <div class="project fade-in">
-            <h3>Question Answer Classification</h3>
+            <div class="project-head">
+              <h3><a href="https://github.com/Nabil0090/CSE-440-NLP-/blob/main/CSE_440_Project_(QA_Classification).ipynb" target="_blank">Question Answer Classification</a></h3>
+              <a class="gh" href="https://github.com/Nabil0090/CSE-440-NLP-/blob/main/CSE_440_Project_(QA_Classification).ipynb" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
+            </div>
             <p>Machine learning and neural network models for classifying question-answer pairs.</p>
-            <div class="tags"><span>ML</span><span>Neural Networks</span></div>
+            <div class="tags"><span>NLP</span><span>Neural Networks</span></div>
           </div>
 
           <div class="project fade-in">
-            <h3>Food Ordering Application</h3>
+            <div class="project-head">
+              <h3><a href="https://github.com/Nabil0090/Food-Order-App" target="_blank">Food Ordering Application</a></h3>
+              <a class="gh" href="https://github.com/Nabil0090/Food-Order-App" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
+            </div>
             <p>A full-stack food ordering app built for the System Design course (CSE471).</p>
             <div class="tags"><span>MERN Stack</span></div>
           </div>
 
         </div>
-        <p class="more-link fade-in"><a href="https://github.com/Nabil0090" target="_blank">More on GitHub →</a></p>
+        <a class="more-link fade-in" href="https://github.com/Nabil0090" target="_blank"><svg class="icon"><use href="#i-github"/></svg>More on GitHub →</a>
       </div>
     </section>
 
-    <section>
+    <section class="tinted">
       <div class="container">
         <h2 class="section-title fade-in">Education</h2>
 
         <div class="education-item fade-in">
-          <div class="education-degree">B.Sc. in Computer Science and Engineering</div>
-          <div class="education-school">BRAC University · Dhaka, Bangladesh</div>
-          <div class="education-details">Jan 2022 – Jan 2026 · CGPA 3.21 / 4.00</div>
+          <div class="date">2022 – 2026</div>
+          <div>
+            <div class="item-title">B.Sc. in Computer Science and Engineering</div>
+            <div class="item-org">BRAC University · Dhaka, Bangladesh</div>
+            <div class="education-details">CGPA 3.21 / 4.00</div>
+          </div>
         </div>
 
         <div class="education-item fade-in">
-          <div class="education-degree">Higher Secondary Certificate</div>
-          <div class="education-school">Dhaka College · Dhaka, Bangladesh</div>
-          <div class="education-details">2020 · Science · GPA 5.00</div>
+          <div class="date">2020</div>
+          <div>
+            <div class="item-title">Higher Secondary Certificate</div>
+            <div class="item-org">Dhaka College · Dhaka, Bangladesh</div>
+            <div class="education-details">Science · GPA 5.00</div>
+          </div>
         </div>
 
         <div class="education-item fade-in">
-          <div class="education-degree">Secondary School Certificate</div>
-          <div class="education-school">Ideal School and College · Dhaka, Bangladesh</div>
-          <div class="education-details">2018 · GPA 5.00</div>
+          <div class="date">2018</div>
+          <div>
+            <div class="item-title">Secondary School Certificate</div>
+            <div class="item-org">Ideal School and College · Dhaka, Bangladesh</div>
+            <div class="education-details">GPA 5.00</div>
+          </div>
         </div>
 
       </div>
@@ -658,57 +693,55 @@
         <div class="skills">
 
           <div class="skill-category fade-in">
-            <strong>Programming &amp; Data Science</strong>
-            <span>Python, PyTorch, Scikit-Learn, C, SQL, FAISS</span>
+            <h3>Programming &amp; Data Science</h3>
+            <p>Python, PyTorch, Scikit-Learn, C, SQL, FAISS</p>
           </div>
 
           <div class="skill-category fade-in">
-            <strong>Machine Learning &amp; AI</strong>
-            <span>LLM Fine-tuning, Jailbreaking in LLMs, Benchmarking, Image Processing</span>
+            <h3>Machine Learning &amp; AI</h3>
+            <p>LLM Fine-tuning, Jailbreaking in LLMs, Benchmarking, Image Processing</p>
           </div>
 
           <div class="skill-category fade-in">
-            <strong>Advanced Modeling</strong>
-            <span>Knowledge Distillation, Multimodal Fusion, Q-Former, Agentic RAG</span>
+            <h3>Advanced Modeling</h3>
+            <p>Knowledge Distillation, Multimodal Fusion, Q-Former, Agentic RAG</p>
           </div>
 
           <div class="skill-category fade-in">
-            <strong>Bioinformatics &amp; Genomics</strong>
-            <span>FASTA, FASTQ, scRNA-seq, Gene Expression, Alignment, Clustering, PCA</span>
+            <h3>Bioinformatics &amp; Genomics</h3>
+            <p>FASTA, FASTQ, scRNA-seq, Gene Expression, Alignment, Clustering, PCA</p>
           </div>
 
           <div class="skill-category fade-in">
-            <strong>Web Development</strong>
-            <span>MongoDB, Express.js, React, Node.js</span>
+            <h3>Web Development</h3>
+            <p>MongoDB, Express.js, React, Node.js</p>
           </div>
 
           <div class="skill-category fade-in">
-            <strong>Tools &amp; Systems</strong>
-            <span>Linux, Shell Scripting, Bash, Git, GitHub</span>
+            <h3>Tools &amp; Systems</h3>
+            <p>Linux, Shell Scripting, Bash, Git, GitHub</p>
           </div>
 
           <div class="skill-category fade-in">
-            <strong>Languages</strong>
-            <span>English (IELTS 7.0), Bengali (Native)</span>
+            <h3>Languages</h3>
+            <p>English (IELTS 7.0), Bengali (Native)</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact" class="tinted">
       <div class="container">
         <h2 class="section-title fade-in">Contact</h2>
         <div class="contact-text fade-in">
           <p>I'm open to research collaborations, graduate research opportunities, and conversations about LLM safety, agentic AI, and AI for biology.</p>
           <p>Email: <a href="mailto:rafatnabil50@gmail.com">rafatnabil50@gmail.com</a></p>
-          <p>
-            <a href="https://github.com/Nabil0090" target="_blank">GitHub</a>
-            &nbsp;·&nbsp;
-            <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
-            &nbsp;·&nbsp;
-            <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank">Google Scholar</a>
-          </p>
+          <div class="social-links">
+            <a href="https://github.com/Nabil0090" target="_blank"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+            <a href="https://scholar.google.com/citations?user=a8mQXkAAAAAJ&hl=en" target="_blank"><svg class="icon"><use href="#i-scholar"/></svg>Google Scholar</a>
+            <a href="https://www.linkedin.com/in/nabil-walid-rafat-1920362b8/" target="_blank"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
