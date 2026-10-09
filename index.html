@@ -288,6 +288,23 @@
     .publication-authors { font-size: 16px; }
     .publication-authors strong { color: var(--blue); }
     .publication-venue { font-size: 15px; font-style: italic; margin-top: 2px; }
+    .publication + .publication { margin-top: 30px; }
+
+    .pub-link {
+      display: inline-block;
+      margin-left: 8px;
+      font-family: var(--sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 1px 10px;
+      border-radius: 50px;
+      background: var(--blue-soft);
+      color: var(--navy);
+      vertical-align: middle;
+      transition: background-color .2s, color .2s;
+    }
+
+    .pub-link:hover { background: var(--navy); color: #fff; }
 
     .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
@@ -498,7 +515,7 @@
       <div class="container">
         <h2 class="section-title fade-in">Latest News</h2>
         <ul class="news fade-in">
-          <li><span class="date">2026</span><span>Joined <strong>Elite Research Lab</strong> as a Research Intern.</span></li>
+          <li><span class="date">Sep 2026 – Present</span><span>Joined <strong>Elite Research Lab</strong> as a Research Intern.</span></li>
           <li><span class="date">Sep 2026</span><span>Started independent research on <strong>CisRAG</strong> at BRAC University with <span class="sup">Dr. Swakkhar Shatabda</span>.</span></li>
           <li><span class="date">Aug 2026</span><span>Wrapped up my internship at <strong>AMIR Lab</strong>. MGQ-Former reached <strong>78.3%</strong> on EarthVQA.</span></li>
           <li><span class="date">2026</span><span>Paper <strong>Comparative Analysis of LLMs Against Jailbreak Prompts</strong> at ICECTE 2026.</span></li>
@@ -546,7 +563,7 @@
         <h2 class="section-title fade-in">Research Experience</h2>
 
         <div class="experience-item fade-in">
-          <div class="date">2026 – Present</div>
+          <div class="date">Sep 2026 – Present</div>
           <div>
             <div class="item-title">Research Intern</div>
             <div class="item-org">Elite Research Lab</div>
@@ -588,11 +605,29 @@
       <div class="container">
         <h2 class="section-title fade-in">Publications</h2>
         <div class="publication fade-in">
+          <span class="venue">IEEE OJCS</span>
+          <div>
+            <div class="publication-title">MGQ-Former: Mask Guided Tri-Modal Fusion Framework for Remote Sensing VQA</div>
+            <div class="publication-authors"><strong>Nabil Walid Rafat</strong></div>
+            <div class="publication-venue">(Under review at IEEE OJCS, Q1)</div>
+          </div>
+        </div>
+
+        <div class="publication fade-in">
           <span class="venue">ICECTE</span>
           <div>
             <div class="publication-title">Comparative Analysis of LLMs Against Jailbreak Prompts</div>
-            <div class="publication-authors"><strong>Nabil Walid Rafat</strong></div>
+            <div class="publication-authors">Rwittik Sarker, Anika Tabassum Omi, <strong>Nabil Walid Rafat</strong>, Zabid Rahman, Ferdous Ahmed Auvi, Amitabha Chakrabarty*, Md. Fahim-Ul-Islam, Md. Tanzim Reza</div>
             <div class="publication-venue">ICECTE 2026 · Conference Paper</div>
+          </div>
+        </div>
+
+        <div class="publication fade-in">
+          <span class="venue">THESIS</span>
+          <div>
+            <div class="publication-title">Dynamic Gated Distillation: Dual-Teacher Framework for Jailbreak Prevention in LLMs with Preserved Reasoning <a class="pub-link" href="https://dspace.bracu.ac.bd/items/d3985046-154f-4878-8df1-b97318ef9309" target="_blank">Link ↗</a></div>
+            <div class="publication-authors">Rwittik Sarker, <strong>Nabil Walid Rafat</strong>, Anika Tabassum Omi, Ferdous Ahmed Auvi, Zabid Rahman</div>
+            <div class="publication-venue">B.Sc. Thesis, BRAC University, 2026</div>
           </div>
         </div>
       </div>
