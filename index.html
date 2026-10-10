@@ -19,30 +19,29 @@
       --blue-soft: #e8eef6;
       --accent: #c1440e;
       --border: #e3e7ee;
-      --max-width: 960px;
+      --max-width: 1000px;
       --serif: "Source Serif 4", Georgia, serif;
       --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
-      font-size: 17px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--blue); text-decoration: none; transition: color .2s; }
-    a:hover { color: var(--blue-hover); }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-hover); text-decoration: underline; }
     p { margin-top: 0; }
     strong { font-weight: 600; color: var(--navy); }
 
-    .icon { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+    .icon { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
 
     .container {
       width: min(calc(100% - 48px), var(--max-width));
@@ -50,17 +49,12 @@
     }
 
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: saturate(180%) blur(10px);
-      -webkit-backdrop-filter: saturate(180%) blur(10px);
+      background: #fff;
       border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
-      height: 64px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -69,69 +63,64 @@
 
     .nav-name {
       font-family: var(--serif);
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--navy);
     }
 
-    .nav-name:hover { color: var(--navy); }
+    .nav-name:hover { color: var(--navy); text-decoration: none; }
 
-    .nav-links { display: flex; flex-wrap: wrap; gap: 4px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 2px; }
 
     .nav-links a {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 500;
       color: var(--text);
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: background-color .2s, color .2s;
+      padding: 4px 10px;
     }
 
-    .nav-links a:hover { background: var(--blue-soft); color: var(--navy); }
+    .nav-links a:hover { color: var(--blue); }
 
-    .hero { padding: 80px 0 72px; }
+    .hero { padding: 36px 0 32px; }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 220px;
-      gap: 64px;
+      grid-template-columns: 1fr 180px;
+      gap: 48px;
       align-items: center;
     }
 
     .hero h1 {
-      margin: 0 0 10px;
+      margin: 0 0 6px;
       font-family: var(--serif);
-      font-size: 54px;
+      font-size: 42px;
       line-height: 1.1;
       font-weight: 700;
       color: var(--navy);
-      letter-spacing: -0.8px;
+      letter-spacing: -0.5px;
     }
 
     .hero-role {
-      margin-bottom: 26px;
-      font-size: 14px;
+      margin-bottom: 16px;
+      font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--blue);
     }
 
-    .hero-text { font-size: 18.5px; max-width: 640px; }
-    .hero-text p { margin-bottom: 16px; }
+    .hero-text { font-size: 16.5px; max-width: 680px; }
+    .hero-text p { margin-bottom: 10px; }
 
     .profile-photo,
     .profile-placeholder {
-      width: 220px;
-      height: 264px;
-      border-radius: 12px;
+      width: 180px;
+      height: 216px;
+      border-radius: 10px;
       border: 1px solid var(--border);
     }
 
-    .profile-photo {
-      object-fit: cover;
-      box-shadow: 0 12px 32px rgba(19, 41, 75, 0.14);
-    }
+    .profile-photo { object-fit: cover; }
 
     .profile-placeholder {
       display: none;
@@ -142,96 +131,95 @@
       font-size: 13px;
     }
 
-    .social-links { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .social-links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
 
     .social-links a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 14.5px;
+      gap: 7px;
+      font-size: 14px;
       font-weight: 500;
-      padding: 7px 16px;
+      padding: 4px 13px;
       border: 1px solid var(--border);
       border-radius: 50px;
       color: var(--navy);
-      transition: background-color .2s, border-color .2s, color .2s;
     }
 
-    .social-links a:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
-    .social-links .icon { width: 16px; height: 16px; }
+    .social-links a:hover { border-color: var(--navy); text-decoration: none; }
 
-    section { padding: 64px 0; border-top: 1px solid var(--border); }
+    section { padding: 30px 0; border-top: 1px solid var(--border); }
     section.tinted { background: var(--bg-subtle); }
 
     .section-title {
-      margin: 0 0 36px;
+      margin: 0 0 16px;
       font-family: var(--serif);
-      font-size: 32px;
+      font-size: 25px;
       font-weight: 700;
       color: var(--navy);
-      letter-spacing: -0.3px;
+      letter-spacing: -0.2px;
     }
 
     .section-title::after {
       content: "";
       display: block;
-      width: 44px;
+      width: 36px;
       height: 3px;
-      margin-top: 12px;
+      margin-top: 6px;
       background: var(--accent);
       border-radius: 2px;
     }
 
-    .about-text { max-width: 760px; font-size: 18px; }
-    .about-text p { margin-bottom: 18px; }
+    .about-text { font-size: 16px; }
+    .about-text p { margin-bottom: 10px; }
+    .about-text p:last-child { margin-bottom: 0; }
 
     .news { list-style: none; margin: 0; padding: 0; }
 
     .news li {
       display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 20px;
-      padding: 13px 0;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      padding: 6px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 16.5px;
+      font-size: 15.5px;
     }
 
     .news li:last-child { border-bottom: none; }
 
     .date {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
       color: var(--navy);
       font-variant-numeric: tabular-nums;
-      padding-top: 2px;
+      padding-top: 1px;
     }
 
-    .research-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .research-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
     .research-item {
-      padding: 24px 26px;
+      padding: 14px 18px;
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
-    .research-number { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; }
+    .research-number { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; }
 
     .research-item h3 {
-      margin: 6px 0 8px;
+      margin: 2px 0 4px;
       font-family: var(--serif);
-      font-size: 22px;
+      font-size: 18.5px;
       font-weight: 600;
       color: var(--navy);
     }
 
-    .research-item p { margin: 0; font-size: 16px; }
+    .research-item p { margin: 0; font-size: 15px; }
 
     .experience-item {
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 32px;
-      padding: 28px 0;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      padding: 14px 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -240,100 +228,94 @@
 
     .item-title {
       font-family: var(--serif);
-      font-size: 22px;
+      font-size: 18.5px;
       font-weight: 600;
       color: var(--navy);
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
-    .item-org { color: var(--blue); font-size: 16px; font-weight: 500; margin: 2px 0 10px; }
+    .item-org { color: var(--blue); font-size: 15px; font-weight: 500; margin: 1px 0 5px; }
     .item-org span { color: var(--text); font-weight: 400; }
 
     .sup, .item-org span.sup {
       color: var(--blue);
       font-weight: 600;
       background: var(--blue-soft);
-      padding: 1px 8px;
+      padding: 0 7px;
       border-radius: 4px;
       white-space: nowrap;
     }
 
-    .item-desc { margin: 0; font-size: 16.5px; }
+    .item-desc { margin: 0; font-size: 15.5px; }
     .item-desc em { color: var(--navy); }
 
-    .publication { display: flex; gap: 20px; align-items: flex-start; }
+    .publication { display: flex; gap: 16px; align-items: flex-start; }
 
     .venue {
       flex: 0 0 auto;
       min-width: 84px;
       text-align: center;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       letter-spacing: 0.06em;
-      padding: 5px 10px;
-      border-radius: 6px;
+      padding: 3px 8px;
+      border-radius: 5px;
       background: var(--navy);
       color: #fff;
     }
 
     .publication-title {
       font-family: var(--serif);
-      font-size: 21px;
+      font-size: 18px;
       font-weight: 600;
       color: var(--navy);
-      line-height: 1.35;
-      margin-bottom: 4px;
+      line-height: 1.3;
+      margin-bottom: 2px;
     }
 
-    .publication-authors { font-size: 16px; }
+    .publication-authors { font-size: 15px; }
     .publication-authors strong { color: var(--blue); }
-    .publication-venue { font-size: 15px; font-style: italic; margin-top: 2px; }
-    .publication + .publication { margin-top: 30px; }
+    .publication-venue { font-size: 14.5px; font-style: italic; }
+    .publication + .publication { margin-top: 16px; }
 
     .pub-link {
       display: inline-block;
-      margin-left: 8px;
+      margin-left: 6px;
       font-family: var(--sans);
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
-      padding: 1px 10px;
+      padding: 0 9px;
       border-radius: 50px;
       background: var(--blue-soft);
       color: var(--navy);
       vertical-align: middle;
-      transition: background-color .2s, color .2s;
     }
 
-    .pub-link:hover { background: var(--navy); color: #fff; }
-
-    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
     .project {
       display: flex;
       flex-direction: column;
-      padding: 22px 24px;
+      padding: 14px 16px;
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      transition: border-color .2s, box-shadow .2s;
+      border-radius: 8px;
     }
-
-    .project:hover { border-color: #c9d4e4; box-shadow: 0 6px 20px rgba(19, 41, 75, 0.07); }
 
     .project-head {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 10px;
+      margin-bottom: 4px;
     }
 
     .project h3 {
       margin: 0;
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 600;
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
     .project h3 a { color: var(--navy); }
@@ -343,24 +325,24 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
       border-radius: 50%;
       border: 1px solid var(--border);
       color: var(--navy);
-      transition: background-color .2s, color .2s, border-color .2s;
     }
 
-    .gh:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .gh:hover { border-color: var(--navy); }
 
-    .project p { margin: 0 0 14px; font-size: 15.5px; flex: 1; }
+    .project p { margin: 0 0 8px; font-size: 14.5px; flex: 1; }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; }
 
     .tags span {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 500;
-      padding: 2px 10px;
+      padding: 0 9px;
       border-radius: 50px;
       background: var(--blue-soft);
       color: var(--navy);
@@ -369,77 +351,74 @@
     .more-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 28px;
-      font-size: 15.5px;
+      gap: 7px;
+      margin-top: 14px;
+      font-size: 14.5px;
       font-weight: 600;
     }
 
     .education-item {
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 32px;
-      padding: 20px 0;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      padding: 10px 0;
       border-bottom: 1px solid var(--border);
     }
 
     .education-item:first-of-type { padding-top: 0; }
     .education-item:last-of-type { border-bottom: none; padding-bottom: 0; }
-    .education-details { font-size: 15.5px; }
+    .education-item .item-org { margin-bottom: 0; }
+    .education-details { font-size: 14.5px; }
 
-    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 48px; }
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 32px; }
 
     .skill-category h3 {
-      margin: 0 0 4px;
+      margin: 0 0 2px;
       font-family: var(--serif);
-      font-size: 19px;
+      font-size: 16.5px;
       font-weight: 600;
       color: var(--navy);
     }
 
-    .skill-category p { margin: 0; font-size: 16px; }
+    .skill-category p { margin: 0; font-size: 14.5px; }
 
-    .contact-text { max-width: 640px; font-size: 18px; }
+    .contact-text { font-size: 16px; }
+    .contact-text p { margin-bottom: 8px; }
+    .contact-text .social-links { margin-top: 12px; }
 
     footer {
       background: var(--navy);
       color: #c3cbdb;
-      padding: 26px 0;
-      font-size: 14px;
+      padding: 16px 0;
+      font-size: 13.5px;
     }
 
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
 
-    .fade-in { opacity: 0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 860px) {
+      .projects, .skills { grid-template-columns: repeat(2, 1fr); }
+    }
 
     @media (max-width: 760px) {
-      nav { position: static; }
-      .nav-inner { height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 6px; }
-      .nav-links { margin-left: -12px; }
-      .hero { padding: 48px 0 56px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .nav-inner { height: auto; padding: 10px 0; flex-direction: column; align-items: flex-start; gap: 4px; }
+      .nav-links { margin-left: -10px; }
+      .hero { padding: 28px 0; }
+      .hero-grid { grid-template-columns: 1fr; gap: 20px; }
       .hero-grid > :last-child { order: -1; }
-      .profile-photo, .profile-placeholder { width: 160px; height: 192px; }
-      .hero h1 { font-size: 42px; }
+      .profile-photo, .profile-placeholder { width: 140px; height: 168px; }
+      .hero h1 { font-size: 36px; }
       .research-list, .projects, .skills { grid-template-columns: 1fr; }
-      .experience-item, .education-item { grid-template-columns: 1fr; gap: 4px; }
+      .experience-item, .education-item { grid-template-columns: 1fr; gap: 2px; }
     }
 
     @media (max-width: 500px) {
       .container { width: min(calc(100% - 32px), var(--max-width)); }
-      body { font-size: 16px; }
-      .hero h1 { font-size: 36px; }
-      .hero-text, .about-text, .contact-text { font-size: 16.5px; }
-      .section-title { font-size: 28px; }
-      .news li { grid-template-columns: 1fr; gap: 2px; }
-      .publication { flex-direction: column; gap: 10px; }
-      .footer-inner { flex-direction: column; gap: 4px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .fade-in { opacity: 1; transform: none; transition: none; }
+      body { font-size: 15.5px; }
+      .hero h1 { font-size: 32px; }
+      .section-title { font-size: 23px; }
+      .news li { grid-template-columns: 1fr; gap: 0; }
+      .publication { flex-direction: column; gap: 6px; }
+      .footer-inner { flex-direction: column; gap: 2px; }
     }
   </style>
 </head>
@@ -473,7 +452,7 @@
       <div class="hero">
         <div class="hero-grid">
 
-          <div class="hero-text fade-in">
+          <div class="hero-text">
             <h1>Nabil Walid Rafat</h1>
             <div class="hero-role">ML Researcher · LLM Safety · Agentic AI · Multimodal Learning</div>
 
@@ -489,7 +468,7 @@
             </div>
           </div>
 
-          <div class="fade-in">
+          <div>
             <img class="profile-photo" src="profile.jpg" alt="Nabil Walid Rafat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="profile-placeholder">Profile photo</div>
           </div>
@@ -500,8 +479,8 @@
 
     <section id="about">
       <div class="container">
-        <h2 class="section-title fade-in">About</h2>
-        <div class="about-text fade-in">
+        <h2 class="section-title">About</h2>
+        <div class="about-text">
           <p>I started out on the engineering side of machine learning, building things like RAG chatbots and forecasting models. Somewhere along the way, I got more curious about why models behave the way they do than about just getting them to work, and that curiosity pulled me into research.</p>
           <p>My first real research project was my undergraduate thesis, where I looked at how easily language models can be tricked into saying things they shouldn't. I spent months throwing jailbreak prompts at different LLMs, which turned into my first paper at ICECTE 2026. That work led me to build Dynamic Gated Distillation, a way to make small models safer without making them worse at reasoning.</p>
           <p>After graduating, I moved into vision-language models at AMIR Lab. There I built MGQ-Former, a model that answers questions about satellite images while holding on to the small regional details most models tend to blur out. It reached 78.3% accuracy on EarthVQA.</p>
@@ -513,8 +492,8 @@
 
     <section class="tinted">
       <div class="container">
-        <h2 class="section-title fade-in">Latest News</h2>
-        <ul class="news fade-in">
+        <h2 class="section-title">Latest News</h2>
+        <ul class="news">
           <li><span class="date">Sep 2026 – Present</span><span>Joined <strong>Elite Research Lab</strong> as a Research Intern.</span></li>
           <li><span class="date">Sep 2026</span><span>Started independent research on <strong>CisRAG</strong> at BRAC University with <span class="sup">Dr. Swakkhar Shatabda</span>.</span></li>
           <li><span class="date">Aug 2026</span><span>Wrapped up my internship at <strong>AMIR Lab</strong>. MGQ-Former reached <strong>78.3%</strong> on EarthVQA.</span></li>
@@ -527,28 +506,28 @@
 
     <section id="research">
       <div class="container">
-        <h2 class="section-title fade-in">Research Focus</h2>
+        <h2 class="section-title">Research Focus</h2>
         <div class="research-list">
 
-          <div class="research-item fade-in">
+          <div class="research-item">
             <div class="research-number">01</div>
             <h3>LLM Safety &amp; Jailbreak</h3>
             <p>How LLMs fail under jailbreak prompts, and post-training methods like knowledge distillation that make smaller models robust while keeping their reasoning intact.</p>
           </div>
 
-          <div class="research-item fade-in">
+          <div class="research-item">
             <div class="research-number">02</div>
             <h3>Agentic AI &amp; RAG</h3>
             <p>Retrieval systems that route each query to the right source based on what that source can actually do, with reasoning that resists hallucination.</p>
           </div>
 
-          <div class="research-item fade-in">
+          <div class="research-item">
             <div class="research-number">03</div>
             <h3>Multimodal Learning</h3>
             <p>Vision-language fusion and Q-Former style architectures for visual question answering, especially where fine-grained regional detail matters.</p>
           </div>
 
-          <div class="research-item fade-in">
+          <div class="research-item">
             <div class="research-number">04</div>
             <h3>AI for Genomics</h3>
             <p>DNA language models for promoter and enhancer classification, and agents that reason over raw genomic sequences.</p>
@@ -560,9 +539,9 @@
 
     <section id="experience">
       <div class="container">
-        <h2 class="section-title fade-in">Research Experience</h2>
+        <h2 class="section-title">Research Experience</h2>
 
-        <div class="experience-item fade-in">
+        <div class="experience-item">
           <div class="date">Sep 2026 – Present</div>
           <div>
             <div class="item-title">Research Intern</div>
@@ -571,7 +550,7 @@
           </div>
         </div>
 
-        <div class="experience-item fade-in">
+        <div class="experience-item">
           <div class="date">Sep 2026 – Present</div>
           <div>
             <div class="item-title">Independent Research</div>
@@ -580,7 +559,7 @@
           </div>
         </div>
 
-        <div class="experience-item fade-in">
+        <div class="experience-item">
           <div class="date">Feb 2026 – Aug 2026</div>
           <div>
             <div class="item-title">Research Intern (Remote)</div>
@@ -589,7 +568,7 @@
           </div>
         </div>
 
-        <div class="experience-item fade-in">
+        <div class="experience-item">
           <div class="date">2025 – 2026</div>
           <div>
             <div class="item-title">Undergraduate Thesis</div>
@@ -603,8 +582,8 @@
 
     <section id="publications" class="tinted">
       <div class="container">
-        <h2 class="section-title fade-in">Publications</h2>
-        <div class="publication fade-in">
+        <h2 class="section-title">Publications</h2>
+        <div class="publication">
           <span class="venue">IEEE OJCS</span>
           <div>
             <div class="publication-title">MGQ-Former: Mask Guided Tri-Modal Fusion Framework for Remote Sensing VQA</div>
@@ -613,7 +592,7 @@
           </div>
         </div>
 
-        <div class="publication fade-in">
+        <div class="publication">
           <span class="venue">ICECTE</span>
           <div>
             <div class="publication-title">Comparative Analysis of LLMs Against Jailbreak Prompts</div>
@@ -622,7 +601,7 @@
           </div>
         </div>
 
-        <div class="publication fade-in">
+        <div class="publication">
           <span class="venue">THESIS</span>
           <div>
             <div class="publication-title">Dynamic Gated Distillation: Dual-Teacher Framework for Jailbreak Prevention in LLMs with Preserved Reasoning <a class="pub-link" href="https://dspace.bracu.ac.bd/items/d3985046-154f-4878-8df1-b97318ef9309" target="_blank">Link ↗</a></div>
@@ -635,10 +614,10 @@
 
     <section id="projects">
       <div class="container">
-        <h2 class="section-title fade-in">Selected Projects</h2>
+        <h2 class="section-title">Selected Projects</h2>
         <div class="projects">
 
-          <div class="project fade-in">
+          <div class="project">
             <div class="project-head">
               <h3><a href="https://github.com/Nabil0090/HR_Policy_bot_with_RAG" target="_blank">HR Policy RAG Chatbot</a></h3>
               <a class="gh" href="https://github.com/Nabil0090/HR_Policy_bot_with_RAG" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
@@ -647,7 +626,7 @@
             <div class="tags"><span>RAG</span><span>FastAPI</span><span>Streamlit</span></div>
           </div>
 
-          <div class="project fade-in">
+          <div class="project">
             <div class="project-head">
               <h3><a href="https://github.com/Nabil0090/CSE_443_Bioinformatics" target="_blank">Omni-DNA Fine-tuning</a></h3>
               <a class="gh" href="https://github.com/Nabil0090/CSE_443_Bioinformatics" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
@@ -656,7 +635,7 @@
             <div class="tags"><span>Genomics</span><span>LLM Fine-tuning</span></div>
           </div>
 
-          <div class="project fade-in">
+          <div class="project">
             <div class="project-head">
               <h3><a href="https://github.com/Nabil0090/stock-prices-forecasting-amazon" target="_blank">Amazon Stock Forecasting</a></h3>
               <a class="gh" href="https://github.com/Nabil0090/stock-prices-forecasting-amazon" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
@@ -665,7 +644,7 @@
             <div class="tags"><span>LSTM</span><span>Time Series</span><span>Gradio</span></div>
           </div>
 
-          <div class="project fade-in">
+          <div class="project">
             <div class="project-head">
               <h3><a href="https://github.com/Nabil0090/CSE-440-NLP-/blob/main/CSE_440_Project_(QA_Classification).ipynb" target="_blank">Question Answer Classification</a></h3>
               <a class="gh" href="https://github.com/Nabil0090/CSE-440-NLP-/blob/main/CSE_440_Project_(QA_Classification).ipynb" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
@@ -674,7 +653,7 @@
             <div class="tags"><span>NLP</span><span>Neural Networks</span></div>
           </div>
 
-          <div class="project fade-in">
+          <div class="project">
             <div class="project-head">
               <h3><a href="https://github.com/Nabil0090/Food-Order-App" target="_blank">Food Ordering Application</a></h3>
               <a class="gh" href="https://github.com/Nabil0090/Food-Order-App" target="_blank" aria-label="GitHub repository"><svg class="icon"><use href="#i-github"/></svg></a>
@@ -684,15 +663,15 @@
           </div>
 
         </div>
-        <a class="more-link fade-in" href="https://github.com/Nabil0090" target="_blank"><svg class="icon"><use href="#i-github"/></svg>More on GitHub →</a>
+        <a class="more-link" href="https://github.com/Nabil0090" target="_blank"><svg class="icon"><use href="#i-github"/></svg>More on GitHub →</a>
       </div>
     </section>
 
     <section class="tinted">
       <div class="container">
-        <h2 class="section-title fade-in">Education</h2>
+        <h2 class="section-title">Education</h2>
 
-        <div class="education-item fade-in">
+        <div class="education-item">
           <div class="date">2022 – 2026</div>
           <div>
             <div class="item-title">B.Sc. in Computer Science and Engineering</div>
@@ -701,7 +680,7 @@
           </div>
         </div>
 
-        <div class="education-item fade-in">
+        <div class="education-item">
           <div class="date">2020</div>
           <div>
             <div class="item-title">Higher Secondary Certificate</div>
@@ -710,7 +689,7 @@
           </div>
         </div>
 
-        <div class="education-item fade-in">
+        <div class="education-item">
           <div class="date">2018</div>
           <div>
             <div class="item-title">Secondary School Certificate</div>
@@ -724,40 +703,40 @@
 
     <section>
       <div class="container">
-        <h2 class="section-title fade-in">Technical Skills</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="skills">
 
-          <div class="skill-category fade-in">
+          <div class="skill-category">
             <h3>Programming &amp; Data Science</h3>
             <p>Python, PyTorch, Scikit-Learn, C, SQL, FAISS</p>
           </div>
 
-          <div class="skill-category fade-in">
+          <div class="skill-category">
             <h3>Machine Learning &amp; AI</h3>
             <p>LLM Fine-tuning, Jailbreaking in LLMs, Benchmarking, Image Processing</p>
           </div>
 
-          <div class="skill-category fade-in">
+          <div class="skill-category">
             <h3>Advanced Modeling</h3>
             <p>Knowledge Distillation, Multimodal Fusion, Q-Former, Agentic RAG</p>
           </div>
 
-          <div class="skill-category fade-in">
+          <div class="skill-category">
             <h3>Bioinformatics &amp; Genomics</h3>
             <p>FASTA, FASTQ, scRNA-seq, Gene Expression, Alignment, Clustering, PCA</p>
           </div>
 
-          <div class="skill-category fade-in">
+          <div class="skill-category">
             <h3>Web Development</h3>
             <p>MongoDB, Express.js, React, Node.js</p>
           </div>
 
-          <div class="skill-category fade-in">
+          <div class="skill-category">
             <h3>Tools &amp; Systems</h3>
             <p>Linux, Shell Scripting, Bash, Git, GitHub</p>
           </div>
 
-          <div class="skill-category fade-in">
+          <div class="skill-category">
             <h3>Languages</h3>
             <p>English (IELTS 7.0), Bengali (Native)</p>
           </div>
@@ -768,8 +747,8 @@
 
     <section id="contact" class="tinted">
       <div class="container">
-        <h2 class="section-title fade-in">Contact</h2>
-        <div class="contact-text fade-in">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-text">
           <p>I'm open to research collaborations, graduate research opportunities, and conversations about LLM safety, agentic AI, and AI for biology.</p>
           <p>Email: <a href="mailto:rafatnabil50@gmail.com">rafatnabil50@gmail.com</a></p>
           <div class="social-links">
@@ -789,19 +768,6 @@
       <span>Last updated October 2026</span>
     </div>
   </footer>
-
-  <script>
-    const elements = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    elements.forEach((el) => observer.observe(el));
-  </script>
 
 </body>
 </html>
